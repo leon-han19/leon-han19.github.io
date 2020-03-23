@@ -82,6 +82,19 @@
   padding-top: 40px;
 }
 
+.link {
+  text-decoration: none;
+  color: #AE77FF;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #AE77FF;
+  border-color: #AE77FF;
+}
+
 .image {
   width: 100%;
   height: auto;
