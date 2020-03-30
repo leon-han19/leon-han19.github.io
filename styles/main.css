@@ -119,13 +119,12 @@
 
 .project-image-container {
   flex: 1;
+  text-align: center;
 }
 
 .project-image {
   flex: 1;
   max-width: 75%;
-  margin-bottom: -10px;
-  margin-left: 70px;
 }
 
 .project-text {
