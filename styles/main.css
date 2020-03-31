@@ -85,7 +85,8 @@
 .sub-title{
   max-width: 720px;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 60px;
+  margin-bottom: 30px;
   color: #AE77FF;
   font-size: 30px;
 }
