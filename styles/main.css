@@ -183,8 +183,6 @@
 }
 
 .description {
-  max-width: 720px;
-  margin: auto;
   color: #929292;
   font-size: 20px;
   padding-top: 40px;
@@ -209,7 +207,6 @@
   width: 100%;
   height: auto;
   margin-top: 20px;
-  margin-bottom: 80px;
 }
 
 .row::after {
