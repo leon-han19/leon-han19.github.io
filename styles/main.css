@@ -125,7 +125,22 @@
 
 .project-image {
   flex: 1;
-  max-width: 75%;
+  max-width: 60%;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .project-image {
+    margin-top: 0px;
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 770px) {
+  .project-image {
+    margin-top: 45px;
+    max-width: 70%;
+  }
 }
 
 .project-text {
