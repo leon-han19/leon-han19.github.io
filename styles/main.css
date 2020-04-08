@@ -71,6 +71,7 @@
 .icon-container {
   max-width: 720px;
   margin: auto;
+  padding-bottom: 40px;
 }
 
 .icon {
@@ -177,7 +178,7 @@
 }
 
 .project-heading {
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 700;
   line-height: 130%;
   padding-bottom: 10px;
