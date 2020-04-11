@@ -149,7 +149,7 @@
 @media (max-width: 600px) {
   .project {
     flex-direction: column-reverse;
-    padding: 40px;
+    padding: 20px;
   }
 }
 
