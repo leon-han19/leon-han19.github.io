@@ -3,7 +3,7 @@
   margin-right: 0px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 770px) {
   .container__items {
     margin-left: 20px;
     margin-right: 20px;
@@ -168,13 +168,6 @@
   .project-image {
     margin-top: 0px;
     max-width: 75%;
-  }
-}
-
-@media (max-width: 770px) {
-  .project-image {
-    margin-top: 45px;
-    max-width: 70%;
   }
 }
 
