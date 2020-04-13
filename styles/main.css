@@ -120,7 +120,7 @@
 .sub-title{
   max-width: 720px;
   margin: auto;
-  margin-top: 110px;
+  margin-top: 80px;
   margin-bottom: 30px;
   color: #CCCCCC;
   font-size: 32px;
@@ -271,14 +271,14 @@
   }
 }
 
-.experience-box {
+.experience-container {
   max-width: 720px;
   margin: auto;
   text-align: left;
-
 }
 
 .experience {
   color: #909090;
   font-size: 20px;
+  margin-top: 0px;
 }
