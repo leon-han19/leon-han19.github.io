@@ -83,7 +83,7 @@
 .icon-container {
   max-width: 720px;
   margin: auto;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 30px;
 }
 
@@ -120,7 +120,7 @@
 .sub-title{
   max-width: 720px;
   margin: auto;
-  margin-top: 110px;
+  margin-top: 80px;
   margin-bottom: 30px;
   color: #CCCCCC;
   font-size: 32px;
@@ -286,4 +286,40 @@
 
 .italic {
   font-style: italic;
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #AE77FF;
+    border-right: 5px solid #AE77FF;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
 }
