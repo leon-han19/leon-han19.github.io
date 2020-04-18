@@ -84,7 +84,7 @@
   max-width: 720px;
   margin: auto;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 600px) {
@@ -290,7 +290,7 @@
 
 .arrow{
   margin-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -299,7 +299,7 @@
 
 @media (max-width: 600px) {
   .arrow {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
   }
 }
 
