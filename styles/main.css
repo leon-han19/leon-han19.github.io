@@ -63,6 +63,7 @@
   color: #909090;
   display: inline-block;
   font-size: 40px;
+  padding-bottom: 60px;
 }
 
 @media (max-width: 600px) {
@@ -75,7 +76,7 @@
 .intro {
   max-width: 720px;
   margin: auto;
-  padding-top: 40px;
+  padding-top: 10px;
   font-size: 20px;
   color: #909090;
 }
@@ -83,7 +84,7 @@
 .icon-container {
   max-width: 720px;
   margin: auto;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
@@ -227,7 +228,7 @@
 .description {
   color: #909090;
   font-size: 20px;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .footer-text {
