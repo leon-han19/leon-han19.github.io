@@ -61,7 +61,6 @@
 .title { /* large container */
   padding-top: 150px;
   color: #909090;
-  display: inline-block;
   font-size: 40px;
   padding-bottom: 60px;
 }
@@ -220,17 +219,6 @@
   }
 }
 
-.description-container {
-  max-width: 720px;
-  margin: auto;
-}
-
-.description {
-  color: #909090;
-  font-size: 20px;
-  padding-top: 10px;
-}
-
 .footer-text {
   margin: auto;
   text-align: center;
@@ -246,6 +234,11 @@
 
 
 /* for about page specifically */
+.img-container {
+  max-width: 720px;
+  margin: auto;
+}
+
 .image {
   width: 100%;
   height: auto;
