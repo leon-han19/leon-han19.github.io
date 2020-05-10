@@ -33,8 +33,26 @@
   transition: border-color 0.2s;
 }
 
+.nav-item-middle {
+  color: #909090;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-left: 40px;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+@media (max-width: 600px) {
+  .nav-item-middle {
+    margin-left: 20px;
+  }
+}
+
 .nav-item:hover,
-.nav-item:focus {
+.nav-item:focus,
+.nav-item-middle:hover,
+.nav-item-middle:focus {
   border-color: #AE77FF;
   color: #AE77FF;
   text-decoration: none;
@@ -42,6 +60,12 @@
 
 .nav-item:last-child {
   margin-left: 40px;
+}
+
+@media (max-width: 600px) {
+  .nav-item:last-child {
+    margin-left: 20px;
+  }
 }
 
 .nav-container__items {
