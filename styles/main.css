@@ -309,25 +309,48 @@
   font-style: italic;
 }
 
+.text{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .text {
+    display: block;
+  }
+}
+
 .hackathon-project {
   max-width: 720px;
   margin: auto;
-  /* display: flex;
+  display: flex;
   flex-shrink: 0;
-  flex: 1; */
+  flex: 1;
   text-align: left;
+}
+
+@media (max-width: 600px) {
+  .hackathon-project {
+    display: block;
+    flex: 0;
+  }
 }
 
 .hackathon-text {
   color: #909090;
   font-size: 20px;
-  margin-bottom: 10px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-bottom: 15px;
 }
 
-.frame-embed {
-  flex: 1;
+.frame-container {
+  display: inline-block;
+  margin-top: 80px;
+}
+
+@media (max-width: 600px) {
+  .frame-container {
+      margin-top: 20px;
+  }
 }
 
 .arrow{
