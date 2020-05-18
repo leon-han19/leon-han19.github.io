@@ -311,7 +311,7 @@
 
 .text{
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 @media (max-width: 600px) {
@@ -351,6 +351,11 @@
   .frame-container {
       margin-top: 20px;
   }
+}
+
+.hackathon-pic {
+  width: 150px;
+  height: auto;
 }
 
 .arrow{
