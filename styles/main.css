@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#down {
+  margin-top: 10px;
+}
+
 .container__items {
   margin-left: 0px;
   margin-right: 0px;
@@ -394,13 +402,13 @@
 @keyframes animate {
   0%{
     opacity: 0;
-    transform: rotate(45deg) translate(-20px,-20px);
+    transform: rotate(45deg) translate(-30px,-30px);
   }
   50%{
     opacity: 1;
   }
   100%{
     opacity: 0;
-    transform: rotate(45deg) translate(20px,20px);
+    transform: rotate(45deg) translate(0px,0px);
   }
 }
