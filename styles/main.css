@@ -105,6 +105,7 @@ html {
   margin: auto;
   padding-top: 10px;
   font-size: 20px;
+  font-family: Nunito-Light;
   color: #757171;
 }
 
@@ -189,6 +190,7 @@ html {
   margin-bottom: 30px;
   color: #C0C0C0;
   font-size: 32px;
+  font-family: Nunito-SemiBold;
 }
 
 .project { /* large container */
@@ -255,7 +257,7 @@ html {
 
 .project-heading {
   font-size: 27px;
-  font-weight: 500;
+  font-family: Nunito-SemiBold;
   line-height: 130%;
   padding-bottom: 10px;
   color: #757171;
@@ -339,6 +341,7 @@ html {
 .experience {
   color: #909090;
   font-size: 20px;
+  font-family: Nunito-SemiBold;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -379,6 +382,7 @@ html {
   color: #757171;
   font-size: 20px;
   margin-bottom: 15px;
+  font-family: Nunito-Light;
 }
 
 .frame-container {
