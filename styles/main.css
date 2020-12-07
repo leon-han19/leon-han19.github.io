@@ -164,10 +164,10 @@ html {
   font-weight: 200;
   color: #FAFAFA;
   width: 160px;
-  background-color: #000000;
+  background-color: #E9A845;
   text-align: center;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 4px;
 
   /* Position the tooltip text - see examples below! */
   position: absolute;
