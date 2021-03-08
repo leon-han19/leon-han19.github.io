@@ -42,7 +42,7 @@ body {
   padding-top: 10px;
   padding-bottom: 5px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   // border-bottom: 2px solid transparent;
   transition: color 0.2s;
 }
@@ -53,7 +53,7 @@ body {
   padding-bottom: 5px;
   margin-left: 40px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   // border-bottom: 2px solid transparent;
   transition: color 0.2s;
 }
@@ -113,7 +113,7 @@ body {
   margin: auto;
   padding-top: 10px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   color: #757171;
 }
 
@@ -175,7 +175,7 @@ body {
 .link-tooltip .tooltiptext {
   visibility: hidden;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 300;
   color: #FAFAFA;
   width: 160px;
   background-color: #E9A845;
@@ -294,7 +294,7 @@ body {
   padding-right: 0px;
   color: #909090;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   transition: color 0.2s
 }
 
@@ -407,7 +407,7 @@ body {
   color: #757171;
   font-size: 20px;
   margin-bottom: 15px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .frame-container {
