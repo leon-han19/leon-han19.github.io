@@ -201,7 +201,7 @@ body {
   margin: auto;
   margin-top: 80px;
   margin-bottom: 30px;
-  color: #C0C0C0;
+  color: #E9A845;
   font-size: 32px;
   font-weight: 400;
 }
@@ -444,8 +444,8 @@ body {
   display: block;
   width: 30px;
   height: 30px;
-  border-bottom: 5px solid #E9A845;
-  border-right: 5px solid #E9A845;
+  border-bottom: 5px solid #757171;
+  border-right: 5px solid #757171;
   transform: rotate(45deg);
   margin: -10px;
   animation: animate 2s infinite;
