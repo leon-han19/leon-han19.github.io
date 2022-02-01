@@ -450,7 +450,7 @@ body {
   border-right: 5px solid #555555;
   transform: rotate(45deg);
   margin: -10px;
-  animation: animate 2s infinite;
+  animation: animate 1s infinite;
 }
 
 .arrow span:nth-child(1){
