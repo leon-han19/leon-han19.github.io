@@ -426,6 +426,10 @@
   height: auto;
 }
 
+#arrow {
+  scroll-behavior: smooth;
+}
+
 .arrow{
   margin-top: 60px;
   position: absolute;
