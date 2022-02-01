@@ -1,10 +1,8 @@
-$animate: all 0.2s ease-in-out;
-
-html {
+.html {
   scroll-behavior: smooth;
 }
 
-body {
+.body {
   font-family: 'Open Sans', sans-serif;
   background-color: #fafafa;
 }
@@ -155,7 +153,7 @@ body {
   color: #663399;
   font-weight: 500;
   background: linear-gradient(#FAFAFA 50%, #FAFAFA 50%, #FAFAFA);
-  transition: $animate;
+  transition: all 0.2s ease-in-out;
 }
 
 .link:hover {
