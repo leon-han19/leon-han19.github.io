@@ -41,8 +41,8 @@
   color: #663399;
   padding-top: 10px;
   padding-bottom: 5px;
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
   background: linear-gradient(#FAFAFA 50%, #FAFAFA 50%, #FAFAFA);
   transition: background 0.2s;
@@ -52,10 +52,10 @@
   padding-top: 10px;
   padding-bottom: 5px;
   margin-left: 40px;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   color: #663399;
-  font-weight: 300;
+  font-weight: 500;
   background: linear-gradient(#FAFAFA 50%, #FAFAFA 50%, #FAFAFA);
   transition: background 0.2s;
 }
@@ -95,26 +95,29 @@
   margin: auto;
 }
 
+.name {
+  font-weight: 600;
+  font-size: 32px;
+}
 .title { /* large container */
-  padding-top: 150px;
+  padding-top: 112px;
+  padding-bottom: 80px;
   color: #555555;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 400;
-  padding-bottom: 60px;
 }
 
 @media (max-width: 600px) {
   .title {
     margin-top: 60px;
-    margin-bottom: 140px;
+    margin-bottom: 64px;
   }
 }
 
 .intro {
   max-width: 720px;
   margin: auto;
-  padding-top: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   color: #555555;
 }
@@ -135,17 +138,6 @@
   .icon-container {
     padding-bottom: 60px;
   }
-}
-
-.icon {
-  color: #868686;
-  transition: color 0.2s;
-  font-size: 30px;
-  margin-right: 30px;
-}
-
-.icon:hover {
-  color: #CC7C04;
 }
 
 .link {
@@ -199,10 +191,10 @@
 .sub-title{
   max-width: 720px;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 64px;
   margin-bottom: 30px;
-  color: #CC7C04;
-  font-size: 32px;
+  color: #bdbdbd;
+  font-size: 28px;
   font-weight: 400;
 }
 
@@ -212,12 +204,11 @@
   display: flex;
   flex-shrink: 0;
   background-color: #FFFFFF;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  border-radius: 4px;
+  margin-top: 24px;
+  border-radius: 8px;
   transition-property: transform, box-shadow;
   transition-duration: 0.3s;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
 .project:hover,
@@ -231,17 +222,6 @@
     flex-direction: column-reverse;
     padding: 20px;
   }
-}
-
-.project-coming-soon { /* large container */
-  max-width: 720px;
-  margin: auto;
-  display: flex;
-  flex-shrink: 0;
-  background-color: #EAEAEA;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  border-radius: 4px;
 }
 
 .project-image-container {
@@ -280,10 +260,10 @@
 }
 
 .project-heading {
-  font-size: 27px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 130%;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
   color: #555555;
   flex: 1;
   transition: color 0.2s;
@@ -293,13 +273,13 @@
   text-align: left;
   padding-right: 0px;
   color: #555555;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   transition: color 0.2s
 }
 
 .project:hover .company {
-  color: #CC7C04;
+  color: #bdbdbd;
 }
 
 @media (max-width: 600px) {
@@ -373,6 +353,7 @@
 
 .italic {
   font-style: italic;
+  font-size: 16px;
 }
 
 .text{
@@ -386,7 +367,7 @@
   }
 }
 
-.hackathon-project {
+/* .hackathon-project {
   max-width: 720px;
   margin: auto;
   display: flex;
@@ -408,7 +389,7 @@
   font-size: 20px;
   margin-bottom: 15px;
   font-weight: 300;
-}
+} */
 
 .frame-container {
   display: inline-block;
@@ -418,61 +399,5 @@
 @media (max-width: 600px) {
   .frame-container {
       margin-top: 20px;
-  }
-}
-
-.hackathon-pic {
-  width: 150px;
-  height: auto;
-}
-
-#arrow {
-  scroll-behavior: smooth;
-}
-
-.arrow{
-  margin-top: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-@media (max-width: 600px) {
-  .arrow {
-    padding-bottom: 50px;
-  }
-}
-
-.arrow span{
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-bottom: 5px solid #555555;
-  border-right: 5px solid #555555;
-  transform: rotate(45deg);
-  margin: -10px;
-  animation: animate 2s infinite;
-}
-
-.arrow span:nth-child(1){
-  animation-delay: -0.2s;
-}
-
-.arrow span:nth-child(2){
-  animation-delay: -0.4s;
-}
-
-@keyframes animate {
-  0%{
-    opacity: 0;
-    transform: rotate(45deg) translate(-30px,-30px);
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-    transform: rotate(45deg) translate(0px,0px);
   }
 }
