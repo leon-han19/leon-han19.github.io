@@ -1,3 +1,4 @@
+<!-- start copy paste for any new page -->
 <!DOCTYPE html>
 <html lang="en" class="sr">
 <head>
@@ -11,11 +12,11 @@
 	  gtag('config', 'UA-161606143-1');
 	</script>
 
-	<title>leon han</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Leon Han</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-  <meta name="keywords" content="leon han, engineering, waterloo, ux, designer, PM, Nearside, Hack the North">
-  <meta name="description" content="hi, welcome to my portfolio :)">
+  	<meta name="keywords" content="leon han, engineering, waterloo, ux, designer, PM, Nearside, Hack the North">
+  	<meta name="description" content="hi, welcome to my portfolio :)">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -28,7 +29,12 @@
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="js/scroll.js"></script>
 	<link rel="icon" href="images/site-logo.png">
-
+	<script>
+	$('li').click(function() {
+    	$(this).removeClass('active');
+    	$(this).addClass('active');
+	});
+	</script>
 	<style>
 		body {
 		  font-family: 'Open Sans', sans-serif;
@@ -36,46 +42,81 @@
 		}
 	</style>
 </head>
+<!-- end copy paste for any new page -->
 
 <body>
 	<div class="container__items">
-		<nav class="nav-container">
-			<a href="index.html" class="nav-item">Home</a>
-			<div class="nav-container__items">
-				<a href="leon_han_resume_F23.pdf" target="_blank" class="nav-item">Resume<a>
-				<a href="https://www.notion.so/Reading-List-f43d667fafe0431f9f3e7e86c5269fa9" target="_blank" class="nav-item-middle">Bookshelf</a>
-				<a href="about.html" class="nav-item">About</a>
-			</div>
-		</nav>
+		<!-- <div class="outer-nav-container"> -->
+			<nav class="nav-container">
+				<a href="index.html" class="nav-item">Home</a>
+				<div class="nav-container__items">
+					<a href="leon_han_resume_F23.pdf" target="_blank" class="nav-item">Resume<a>
+					<a href="https://www.notion.so/Reading-List-f43d667fafe0431f9f3e7e86c5269fa9" target="_blank" class="nav-item-middle">Bookshelf</a>
+					<a href="about.html" class="nav-item">About</a>
+				</div>
+			</nav>
+		<!-- </div>	 -->
 
 		<div class="title-container animated fadeInUp">
-	  	<h1 class="title"><p class="name">Leon Han</p>Product designer focused on system level interaction and visual design. Looking for 2024 new grad roles!</h1>
+			<h1 class="title"><p class="name">Leon Han</p></h1>
+			<p class="intro">Product designer focused on system level interaction and visual design. <b>Looking for 2024 new grad roles!</b></p>
+			<p class="intro" style="padding-top: 16px;padding-bottom: 40px;">Designed at <a href="https://mercury.com/" target="_blank" class="link">Mercury<a></a>, <a href="https://hackthenorth.com/" target="_blank" class="link">Hack the North</a>, <a href="https://techcrunch.com/2021/12/06/neobank-hatch-series-b/" target="_blank" class="link">Nearside<a>, <a href="https://masava.com/" target="_blank" class="link">Masava</a>, <a href="https://www.geotab.com/" target="_blank" class="link">Geotab</a>, and <a href="https://tdlab.io/" target="_blank" class="link">TD</a>.</p>
 		</div>
 
 		<div class="animated fadeInUp">
-			<p class="intro"><b>Currently</b>: Design @<a href="https://mercury.com/" target="_blank" class="link">Mercury<a></a>, Sponsorship Director @<a href="https://hackthenorth.com/" target="_blank" class="link">Hack the North</a>.</p>
-			<p class="intro" style="padding-top: 16px;padding-bottom: 40px;"><b>Previously</b>: Design and Product @<a href="https://www.nearside.com/" target="_blank" class="link">Nearside<a>, Design @<a href="https://hackthenorth.com/" target="_blank" class="link">Hack the North</a>, Product @<a href="https://www.vidyard.com/" target="_blank" class="link" data-content="Nearside">Vidyard</a>, Design @<a href="https://www.geotab.com/" target="_blank" class="link">Geotab</a>, UX research @<a href="https://www.techplusuw.org/" target="_blank" class="link">Tech+ UW</a>.</p>
-		</div>
+			<a href="https://leon-han19.notion.site/Mercury-building-trust-in-Mercury-Treasury-33a521b8590d41ada741b4aaa96900fd?pvs=4" class="project" style="text-decoration: none">
+				<div class="project-text">
+					<p class="company">Mercury</p>
+					<p class="project-heading">Building trust in Mercury Treasury</p>
+				</div>
+				<div class="project-image-container">
+					<img class="project-image" src="images/mercury.png" style="max-width: 80%; padding-top: 10px;">
+				</div>
+			</a>
 
-		<div class="animated fadeInUp">
-			<a href="https://www.notion.so/Hatch-03fdd59d8b154faa85139fdc018ab91a" target="blank" class="project" style="text-decoration: none">
+			<a href="https://leon-han19.notion.site/Nearside-simplifying-the-payment-experience-for-small-businesses-03fdd59d8b154faa85139fdc018ab91a?pvs=4" class="project" style="text-decoration: none">
 				<div class="project-text">
 					<p class="company">Nearside</p>
-					<p class="project-heading">Making business banking easier for small businesses</p>
+					<p class="project-heading">Simplifying ACHs and checks for small business owners</p>
+				</div>
+				<div class="project-image-container">
+					<img class="project-image" src="images/hatch.png" style="max-width: 80%; padding-top: 10px;">
+				</div>
+			</a>
+
+			<a href="https://leon-han19.notion.site/Masava-re-imagining-liquor-sales-and-distribution-791a9934d900416dbbaab715017e54c9?pvs=4" target="blank" class="project" style="text-decoration: none">
+				<div class="project-text">
+					<p class="company">Masava</p>
+					<p class="project-heading">Re-imagining liquor sales and distribution</p>
+				</div>
+				<div class="project-image-container">
+					<img class="project-image" src="images/masava.png" style="max-width: 80%; padding-top: 10px;">
+				</div>
+			</a>
+
+			<!--
+			<a href="nearside.html" class="project" style="text-decoration: none">
+				<div class="project-text">
+					<p class="company">Nearside</p>
+					<p class="project-heading">Accessing funds faster through Instant Deposits</p>
 				</div>
 				<div class="project-image-container">
 					<img class="project-image" src="images/Nearside.png" style="max-width: 80%; padding-top: 10px;">
 				</div>
 			</a>
-			<a href="https://www.notion.so/Hack-the-North-48578696733d44caae69c9d545892463" target="blank" class="project" style="text-decoration: none">
+			-->
+
+			<a href="https://leon-han19.notion.site/Hack-the-North-shaping-project-submission-for-1-600-hackers-48578696733d44caae69c9d545892463?pvs=4" target="blank" class="project" style="text-decoration: none">
 				<div class="project-text">
 					<p class="company">Hack the North</p>
-					<p class="project-heading">Designing for Canada's largest hackathon</p>
+					<p class="project-heading">Shaping project submission for 1,600 hackers</p>
 				</div>
 				<div class="project-image-container">
 					<img class="project-image" src="images/HTN laptop.png" style="max-width: 80%; padding-top: 10px;">
 				</div>
 			</a>
+			<!--
+
 			<a href="https://www.notion.so/CardioMe-creating-a-personalized-cardiac-rehab-experience-b57529589a0d451cb97e4a67e4f5ca7d" target="_blank" class="project" style="text-decoration: none">
 				<div class="project-text">					
 					<p class="company">Betalab</p>
@@ -85,7 +126,6 @@
 					<img class="project-image" src="images/betalab-pic.png" style="max-width: 70%; padding-top: 10px;">
 				</div>
 			</a>
-		<!--
 			<a href="https://www.notion.so/Collision-Detection-in-MyGeotab-fb645353106e47e5b6b0c31c80311c58" target="blank" class="project" style="text-decoration: none">
 				<div class="project-text">
 					<p class="project-heading">visualizing collision data to improve driver safety</p>
@@ -139,7 +179,7 @@
 					<a href="https://twitter.com/leonhan_" target="_blank" class="nav-item" style="margin-right: 32px;">Twitter</a>
 				</div>
 				<div class="bottom-bar">
-					<p class="footer-text">Last updated: October 1, 2023</p>
+					<p class="footer-text">Last updated: October 2, 2023</p>
 				</div> 
 			</div>
 		</div>
