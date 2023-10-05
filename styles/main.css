@@ -217,6 +217,9 @@ body {
   font-weight: 400;
 }
 
+
+/* project cards */
+/************************************************************************/
 .project-container { /* large container */
   max-width: 600px;
   margin: 0 auto;
@@ -286,15 +289,15 @@ body {
 
 .company {
   text-align: left;
-  color: #555555;
+  color: #a5a5a5;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   transition: color 0.2s;
   line-height: 2px;
 }
 
 .project-container:hover .company {
-  color: #9b9b9b;
+  color: #555555;
 }
 
 @media (max-width: 600px) {
@@ -302,7 +305,12 @@ body {
     text-align: left;
   }
 }
+/************************************************************************/
+/* project cards */
 
+
+/* footer */
+/************************************************************************/
 .footer-text {
   margin: auto;
   text-align: center;
@@ -318,8 +326,12 @@ body {
     padding-top: 0;
   }
 }
+/************************************************************************/
+/* footer */
 
-/* for about page specifically */
+
+/* about page-specific styles */
+/************************************************************************/
 .image-container {
   max-width: 600px;
   margin: auto;
@@ -348,31 +360,39 @@ body {
   font-style: italic;
   font-size: 16px;
 }
+/************************************************************************/
+/* about page-specific styles */
 
-.text{
-  display: inline-block;
-  margin-right: 40px;
+
+/* case study styles */
+/************************************************************************/
+.h1 {
+  font-size: 32px;
+  font-weight: 400;
+  padding-bottom: 30px;
 }
 
-@media (max-width: 600px) {
-  .text {
-    display: block;
-  }
+.h2 {
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 24px;
 }
 
-/* .hackathon-project {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-shrink: 0;
-  flex: 1;
-  text-align: left;
-  margin-bottom: 40px;
+.h3 {
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 16px;
 }
 
-@media (max-width: 600px) {
-  .hackathon-project {
-    display: block;
-    flex: 0;
-  }
-} */
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+
+.callout {
+  background: #EEEEEE;
+  border-radius: 8px;
+}
+/************************************************************************/
+/* case study styles */
