@@ -64,80 +64,43 @@
 			<h1 class="heading-1">Masava – Re-imagining liquor sales and distribution</h1>
         </div>
         <div class="title-container animated fadeInUp">
-            <p class="text"><a class="link" href="https://mercury.com/" target="_blank">Mercury</a> is the complete financial stack for startups, offering checking/savings accounts, corporate card and spend management, invoicing, AR/AP and more.</p>
-			<p class="text"><a class="link" href="https://mercury.com/treasury" target="_blank">Treasury</a> is a unique Mercury account where founders can invest idle cash into high-yield investment accounts to earn up to 5.42% annually. Only startups that have over $500k in their checking accounts are eligible, making it a premium product for larger, more valuable customers.</p>
+            <p class="text"><a class="link" href="https://masava.com/" target="_blank">Masava</a> is a seed-stage startup that is fixing America’s tumultuous liquor distribution system via a full-stack sales, inventory, and client management system for wholesalers and retailers (think restaurants, bars—the places where regular consumers go for drinks). I was their 1st designer and architected all their designs, working with their founders to design the screens seen on masava.com.</p>
+			<p class="text"><b>These designs now pull in $300K ARR and were used as part of their pitch to raise a $4M seed round!</b></p>
         </div>
         <div class="title-container animated fadeInUp">
             <div class="cs-image-container">
-                <img src="images/mercury.png">
+                <img src="images/masava.png">
             </div>
         </div>
         <div class="title-container animated fadeInUp">
             <p class="heading-2">Problem</p>
             <div class="callout">
                 <p class="text">🚨</p>
-                <p class="text">Customers had no visibility into the way our yield calculations and fees work, leading them to distrust Treasury</p>
+                <p class="text">Liquor wholesalers have no centralized place to manage their inventory, sales pipelines, transactions, and customer information; additionally, retailers have trouble managing their inventory and tracking liquor orders and invoices.</p>
             </div>
-            <p class="text">Hundreds of customers inquired about this during my term, with one calling it the “worst financial reporting I’ve ever seen”.</p>
         </div>
         <div class="title-container animated fadeInUp">
-            <p class="heading-2">Solution & Key Design Decisions</p>
-            <p class="heading-3">Prototype</p>
-            <video style="max-width:600px; height:auto;" controls>
-                <source src="images/mercury_case_study/yield estimator prototype.mov" type=video/mp4>
-            </video>
-            <p class="heading-3">1. Visualizing the yield calculation</p>
+            <p class="heading-2">Solution</p>
+            <p class="heading-3">Wholesaler dashboard</p>
             <div class="cs-image-container">
-                <img src="images/mercury_case_study/visualizing yield calculation.png">
+                <img src="images/masava_case_study/wholesaler dash.png">
             </div>
-            <p class="text">Visualizing the net yield calculation seemed like a no-brainer since it was the main thing customers were confused about. However, there were <b>some tradeoffs to consider:</b></p>
-            <ul class="text">
-                <li>The equations took up lots of screen space, appearing long and daunting</li>
-                <li>Equations weren't a part of design system and required extra FE development</li>
-                <li>The fee tier was still a confusing concept that visual calculations alone wouldn't solve.</li>
-            </ul>
-
-            <div class="callout">
-                <p class="text">🔨</p>
-                <p class="text"><b>Final decision:</b> explicitly surface the calculations in a receipt style and nest them in dropdowns closed by default so that customers can learn more without being greeted with everything all at once. <br><br>The fee tier confusion is solved by visually pairing the monthly fee calculation with a card showing which fee tier the customer is at and its impact on their fees.</p>
-            </div>
-
-            <p class="heading-3">2. Auto-updating results vs. updating on CTA click</p>
-            <div class="cs-double-image-container">
-                <div class="cs-image-container">
-                    <img src="images/mercury_case_study/with CTA.png">
-                </div>
-                <div class="cs-image-container">
-                    <img src="images/mercury_case_study/without CTA.png">
-                </div>
-            </div>
-            <p class="text">What if somebody wanted to predict their yield many consecutive times with different inputs? Should the results auto-update with every character change made to the inputs, or should it only update after the user has finished editing the inputs and they hit a CTA?</p>
-            <div class="callout">
-                <p class="text">🔨</p>
-                <p class="text"><b>Final decision:</b>  automatically populate results on the first time a user lands on the page based on their numbers to reduce friction of recalling large numbers. <br><br>Any changes to inputs afterwards will require clicking the CTA, giving users control and providing visual hierarchy and direction.</p>
-            </div>
-
-            <p class="heading-3">3. Showing varied risk across portfolio compositions</p>
+            <p class="heading-3">Retailer order page</p>
             <div class="cs-image-container">
-                <img src="images/mercury_case_study/portfolio allocation.png">
+                <img src="images/masava_case_study/retailer order.png">
             </div>
-            <p class="text">While the ability to change portfolio allocation and immediately view the impact on one's net yield is convenient, for full transparency, users need to know the corresponding risk of different allocations. Treasury invests in two funds, one of them being slightly riskier and thus having higher yield – to design ethically, users have to be educated on the risks and so that they understand their options rather than blindly following the option that nets them higher yield.</p>
-            <div class="callout">
-                <p class="text">🔨</p>
-                <p class="text"><b>Final decision:</b> a new slider component to easily toggle portfolio allocation, and statements like “safer and lower yield” to make it clear what people are getting themselves into.</p>
+            <p class="heading-3">Transaction history</p>
+            <div class="cs-image-container">
+                <img src="images/masava_case_study/trx history.png">
             </div>
-
-            <p class="heading-3">4. Design file organization</p>
-            <p class="text">File organization is vital for high-caliber engineering <> design collaboration, and this was emphasized at Mercury. You can take a peek at how I organized my file for clarity and efficiency with FE engineers.</p>
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FweyEt0WYqvuelXt6USLZaz%2FYield-estimator-for-case-study%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DkKU3Ojh6lmvYGMH7-1" allowfullscreen></iframe>
+            <p class="heading-3">Account overview</p>
+            <div class="cs-image-container">
+                <img src="images/masava_case_study/account overview.png">
+            </div>
         </div>
         <div class="title-container animated fadeInUp">
-            <h2 class="heading-2">Success metrics</h2>
-            <ul class="text">
-                <li>Decrease in number of Customer Support tickets related to Treasury fees and yield</li>
-                <li>Retention of customers who used the yield estimator vs those who haven’t</li>
-                <li>Increase in Treasury deposits of customers who used the yield estimator vs those who haven’t</li>
-            </ul>
+            <h2 class="heading-2">Impact</h2>
+            <p class="text">Masava recently raised their $4 million seed round and are earning $300K ARR on these designs. They plan to hire full-time designers to build upon this foundation.</p>
         </div>
 
         <div class="animated fadeInUp">
