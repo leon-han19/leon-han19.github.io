@@ -195,7 +195,7 @@ body {
 .project-container { /* large container */
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 32px;
+  margin-top: 40px;
   text-align: left;
   transition-property: transform;
   transition-duration: 0.2s;
@@ -256,7 +256,6 @@ body {
   font-weight: 400;
   padding-top: 16px;
   color: #555555;
-  line-height: 16px;
 }
 
 .company {
