@@ -372,7 +372,10 @@
 							var firstItem = series.querySelector('.stage-item');
 							var firstMedia = firstItem
 								? (firstItem.querySelector('img, video') || firstItem) : null;
-							var mediaTop = firstMedia
+							// offsetHeight is 0 until the metadata lands; fall back to the
+							// stage's own top rather than dropping the column a whole
+							// stage height, and let the observers re-measure after
+							var mediaTop = (firstMedia && firstMedia.offsetHeight)
 								? stage.getBoundingClientRect().bottom - firstMedia.offsetHeight
 								: stage.getBoundingClientRect().top;
 							var drop = mediaTop - firstHeader.getBoundingClientRect().top;
@@ -391,7 +394,8 @@
 					var media = lastItem
 						? (lastItem.querySelector('img, video') || lastItem) : null;
 					var stageBox = stage.getBoundingClientRect();
-					var anchorTop = media ? stageBox.bottom - media.offsetHeight : stageBox.top;
+					var anchorTop = (media && media.offsetHeight)
+						? stageBox.bottom - media.offsetHeight : stageBox.top;
 
 					// these are both viewport-relative, so the gap is scroll-independent
 					var gap = series.getBoundingClientRect().bottom
@@ -451,7 +455,34 @@
 			document.addEventListener('animationend', function (e) {
 				if (e.target && e.target.closest && e.target.closest('.series')) scheduleRelayout();
 			}, true);
+
+			// Media has no height until its metadata lands, and layout() measures
+			// against the first option's media -- so re-measure whenever a clip or
+			// image resolves its dimensions, not just when the animations settle.
+			var media = document.querySelectorAll('.stage-item img, .stage-item video');
+			for (var m = 0; m < media.length; m++) {
+				media[m].addEventListener('loadedmetadata', scheduleRelayout);
+				media[m].addEventListener('load', scheduleRelayout);
+			}
+			if ('ResizeObserver' in window) {
+				var lastHeights = [];
+				var stageObserver = new ResizeObserver(function (entries) {
+					var changed = false;
+					for (var i = 0; i < entries.length; i++) {
+						var h = Math.round(entries[i].contentRect.height);
+						var key = entries[i].target.closest('.series').getAttribute('data-series');
+						if (lastHeights[key] !== h) { lastHeights[key] = h; changed = true; }
+					}
+					if (changed) scheduleRelayout();
+				});
+				for (var st = 0; st < seriesList.length; st++) {
+					var sg = seriesList[st].querySelector('.series__stage');
+					if (sg) stageObserver.observe(sg);
+				}
+			}
+
 			relayout();
+			window.addEventListener('load', relayout); // catches any straggling media
 			if (document.fonts && document.fonts.ready) {
 				document.fonts.ready.then(relayout); // text heights change with the webfont
 			}
