@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
   	<meta name="keywords" content="leon han, thatch, ux, designer, product, enrollment, healthcare benefits">
   	<meta name="description" content="Pushing enrollment rates up at Thatch">
-	<link rel="stylesheet" href="../styles/main.css?v=1788940000">
+	<link rel="stylesheet" href="../styles/main.css?v=1788940789">
 	<link rel="stylesheet" href="../styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -372,6 +372,22 @@
 						- lastHeader.getBoundingClientRect().top;
 					var needed = visual.getBoundingClientRect().bottom - anchorTop;
 					tail.style.height = Math.max(0, Math.round(needed - gap)) + 'px';
+				}
+
+				// The last series can only release if the page can still scroll once
+				// its bottom edge has risen to the pinned column's bottom. On tall
+				// windows the copy below it isn't enough, so top the page up.
+				var lastSeries = seriesList[seriesList.length - 1];
+				if (lastSeries) {
+					document.body.style.paddingBottom = '0px';
+					var lastVisual = lastSeries.querySelector('.series__visual');
+					var restBottom = (parseFloat(getComputedStyle(lastVisual).top) || 0)
+						+ lastVisual.getBoundingClientRect().height;
+					var below = document.documentElement.scrollHeight
+						- (lastSeries.getBoundingClientRect().bottom + window.scrollY);
+					var runway = window.innerHeight - restBottom;
+					document.body.style.paddingBottom =
+						Math.max(0, Math.ceil(runway - below)) + 'px';
 				}
 			}
 

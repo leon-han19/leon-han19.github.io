@@ -754,13 +754,24 @@ ul li {
 }
 
 /* one scroll step per option */
+/* Spacing is an explicit margin rather than min-height slack: with a
+   min-height, short blocks (a 3-item checklist) absorbed the leftover space
+   and long blocks (a couple of paragraphs) overflowed it, so the gap between
+   options differed from series to series. */
 .variant {
-  min-height: 42vh;
-  box-sizing: border-box; /* keep padding inside the 75vh, not added to it */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 24px 0;
+  margin-bottom: 48px; /* + the 24px paddings = a uniform 96px between options */
+}
+
+.variant:last-of-type {
+  margin-bottom: 0; /* the JS-sized tail handles the space below the last one */
+}
+
+.variant > :last-child {
+  margin-bottom: 0; /* so a block ending in a paragraph gaps like one ending in a list */
 }
 
 .series__tail { /* height computed in JS; see layout() */
@@ -863,7 +874,7 @@ ul li {
   }
 
   .variant {
-    min-height: 34vh;
+    margin-bottom: 24px; /* tighter stack when the columns are stacked */
   }
 }
 /************************************************************************/
