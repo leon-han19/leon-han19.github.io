@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
   	<meta name="keywords" content="leon han, thatch, ux, designer, product, employer onboarding, healthcare benefits">
   	<meta name="description" content="Crafting the entire employer onboarding flow at Thatch">
-	<link rel="stylesheet" href="../styles/main.css?v=1788940789">
+	<link rel="stylesheet" href="../styles/main.css?v=1788940915">
 	<link rel="stylesheet" href="../styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -337,9 +337,29 @@
 				<article class="variant" data-variant="2">
 					<p class="variant__label variant__label--explored animated fadeInUp">Roughly explored direction</p>
 					<h3 class="variant__name animated fadeInUp">Controls and impact side by side</h3>
-					<p class="text animated fadeInUp">The obvious alternative was to sit the two halves next to each other &mdash; budget controls on one side, the impact on employees on the other, both in view at once. I went back and forth on this one for a while.</p>
-					<p class="text animated fadeInUp">Splitting the width was what killed it. Neither side had enough room: the budget options collapsed to bare numbers, with no space for the line that explains what each one actually gets an employee. That explanation is the whole point of showing three options.</p>
-					<p class="text animated fadeInUp">Having both halves live at once also left the employer with nowhere to look first. The single column shows less at any one moment, but what it does show is legible.</p>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>Not focused enough &ndash; a side by side view lends itself better when one side is much more important than the other, or when one side contains all the action/inputs.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>The vertical list of radio buttons wasn't great for showing necessary natural language context for each option.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>Depending on viewport heights, the left side may have to scroll, which might hide some options by default.</span>
+						</li>
+					</ul>
 				</article>
 
 				<article class="variant" data-variant="3">

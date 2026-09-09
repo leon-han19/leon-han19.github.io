@@ -817,6 +817,10 @@ ul li {
   color: #3f4a7a; /* same accent as the Shipped badge */
 }
 
+.checklist__icon--cross { /* for what an explored option gave up */
+  color: #9a5a5a;
+}
+
 .variant__name {
   margin-bottom: 12px;
   font-size: 18px;
