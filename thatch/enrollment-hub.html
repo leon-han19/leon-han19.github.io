@@ -220,7 +220,7 @@
 			</div>
 		</section>
 
-		<!-- Series 3: 3 visuals, sticky until the carousel is exhausted -->
+		<!-- Series 3: a single visual, so no carousel and no option heading -->
 		<section class="series" data-series="3">
 			<div class="series__visual">
 				<div class="series__header animated fadeInUp">
@@ -230,37 +230,14 @@
 				<figure class="stage-item is-active" data-variant="1">
 					<div class="visual-placeholder">
 						<p class="visual-placeholder__label">Visual 01</p>
-						<p class="visual-placeholder__hint">TODO(leon): first deadline view</p>
+						<p class="visual-placeholder__hint">TODO(leon): the deadlines view</p>
 					</div>
 				</figure>
-				<figure class="stage-item" data-variant="2">
-					<div class="visual-placeholder">
-						<p class="visual-placeholder__label">Visual 02</p>
-						<p class="visual-placeholder__hint">TODO(leon): second deadline view</p>
-					</div>
-				</figure>
-				<figure class="stage-item" data-variant="3">
-					<div class="visual-placeholder">
-						<p class="visual-placeholder__label">Visual 03</p>
-						<p class="visual-placeholder__hint">TODO(leon): third deadline view</p>
-					</div>
-				</figure>
-				</div>
-				<div class="series__caption">
-					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">TODO(leon): first deadline view</span></p>
-					<p class="caption-item" data-variant="2"><span class="caption-item__status">TODO(leon): second deadline view</span></p>
-					<p class="caption-item" data-variant="3"><span class="caption-item__status">TODO(leon): third deadline view</span></p>
-				</div>
-				<div class="series__carousel">
-				<button type="button" class="thumb is-active" data-variant="1" aria-label="Visual 1: TODO(leon): first deadline view"><span class="thumb__placeholder">01</span></button>
-				<button type="button" class="thumb" data-variant="2" aria-label="Visual 2: TODO(leon): second deadline view"><span class="thumb__placeholder">02</span></button>
-				<button type="button" class="thumb" data-variant="3" aria-label="Visual 3: TODO(leon): third deadline view"><span class="thumb__placeholder">03</span></button>
 				</div>
 			</div>
 
 			<div class="series__content">
 				<article class="variant" data-variant="1">
-					<h3 class="variant__name animated fadeInUp">1. TODO(leon): first deadline view</h3>
 					<ul class="checklist animated fadeInUp">
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -279,54 +256,6 @@
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
 							<span>TODO(leon): what action sits on each one.</span>
-						</li>
-					</ul>
-				</article>
-
-				<article class="variant" data-variant="2">
-					<h3 class="variant__name animated fadeInUp">2. TODO(leon): second deadline view</h3>
-					<ul class="checklist animated fadeInUp">
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what this one shows.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): why it’s here.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what it trades off.</span>
-						</li>
-					</ul>
-				</article>
-
-				<article class="variant" data-variant="3">
-					<h3 class="variant__name animated fadeInUp">3. TODO(leon): third deadline view</h3>
-					<ul class="checklist animated fadeInUp">
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what this one shows.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): why it’s here.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what it trades off.</span>
 						</li>
 					</ul>
 				</article>
@@ -441,7 +370,7 @@
 				var line = (box.top + box.bottom) / 2; // middle of the visual
 				var chosen = variants[0];
 				for (var i = 0; i < variants.length; i++) {
-					var header = variants[i].querySelector('.variant__label, .variant__name')
+					var header = variants[i].querySelector('.variant__label, .variant__name, .text, .checklist')
 						|| variants[i];
 					if (header.getBoundingClientRect().top <= line) chosen = variants[i];
 				}
@@ -511,7 +440,7 @@
 							- content.getBoundingClientRect().left) > 1;
 						if (sideBySide) {
 							var firstHeader = variants[0].querySelector(
-								'.variant__label, .variant__name') || variants[0];
+								'.variant__label, .variant__name, .text, .checklist') || variants[0];
 							// the media is bottom-aligned in the stage, so its own top
 							// border is below stage.top whenever a later option is taller
 							// stage.bottom depends on the tallest item, so every clip in the
@@ -528,7 +457,7 @@
 					}
 
 					var last = variants[variants.length - 1];
-					var lastHeader = last.querySelector('.variant__label, .variant__name') || last;
+					var lastHeader = last.querySelector('.variant__label, .variant__name, .text, .checklist') || last;
 
 					// The media is bottom-aligned in the stage, so its top border is
 					// stage bottom minus its own height. offsetHeight is used because

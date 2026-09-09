@@ -507,7 +507,7 @@
 				var line = (box.top + box.bottom) / 2; // middle of the visual
 				var chosen = variants[0];
 				for (var i = 0; i < variants.length; i++) {
-					var header = variants[i].querySelector('.variant__label, .variant__name')
+					var header = variants[i].querySelector('.variant__label, .variant__name, .text, .checklist')
 						|| variants[i];
 					if (header.getBoundingClientRect().top <= line) chosen = variants[i];
 				}
@@ -577,7 +577,7 @@
 							- content.getBoundingClientRect().left) > 1;
 						if (sideBySide) {
 							var firstHeader = variants[0].querySelector(
-								'.variant__label, .variant__name') || variants[0];
+								'.variant__label, .variant__name, .text, .checklist') || variants[0];
 							// the media is bottom-aligned in the stage, so its own top
 							// border is below stage.top whenever a later option is taller
 							// stage.bottom depends on the tallest item, so every clip in the
@@ -594,7 +594,7 @@
 					}
 
 					var last = variants[variants.length - 1];
-					var lastHeader = last.querySelector('.variant__label, .variant__name') || last;
+					var lastHeader = last.querySelector('.variant__label, .variant__name, .text, .checklist') || last;
 
 					// The media is bottom-aligned in the stage, so its top border is
 					// stage bottom minus its own height. offsetHeight is used because
