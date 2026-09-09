@@ -763,7 +763,7 @@ ul li {
   display: flex;
   flex-direction: column;
   padding: 24px 0;
-  margin-bottom: 48px; /* + the 24px paddings = a uniform 96px between options */
+  margin-bottom: 72px; /* + the 24px paddings = a uniform 120px between options */
 }
 
 .variant:last-of-type {
@@ -878,7 +878,7 @@ ul li {
   }
 
   .variant {
-    margin-bottom: 24px; /* tighter stack when the columns are stacked */
+    margin-bottom: 32px; /* tighter stack when the columns are stacked */
   }
 }
 /************************************************************************/

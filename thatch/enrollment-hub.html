@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
   	<meta name="keywords" content="leon han, thatch, ux, designer, product, enrollment, healthcare benefits">
   	<meta name="description" content="Pushing enrollment rates up at Thatch">
-	<link rel="stylesheet" href="../styles/main.css?v=1788940915">
+	<link rel="stylesheet" href="../styles/main.css?v=1788945023">
 	<link rel="stylesheet" href="../styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -180,26 +180,18 @@
 						<source src="../images/enrollment_hub/2.4.mp4?v=1788942702" type="video/mp4">
 					</video>
 				</figure>
-				<figure class="stage-item" data-variant="5">
-					<div class="visual-placeholder">
-						<p class="visual-placeholder__label">Visual 05</p>
-						<p class="visual-placeholder__hint">TODO(leon): fifth detail</p>
-					</div>
-				</figure>
 				</div>
 				<div class="series__caption">
 					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">A count on hover for each cohort</span></p>
 					<p class="caption-item" data-variant="2"><span class="caption-item__status">Statuses become a list on mobile</span></p>
 					<p class="caption-item" data-variant="3"><span class="caption-item__status">Hovering a status focuses its segment</span></p>
 					<p class="caption-item" data-variant="4"><span class="caption-item__status">The nudge opens a pre-filled draft</span></p>
-					<p class="caption-item" data-variant="5"><span class="caption-item__status">TODO(leon): fifth detail</span></p>
 				</div>
 				<div class="series__carousel">
 				<button type="button" class="thumb is-active" data-variant="1" aria-label="Visual 1: A count on hover for each cohort"><img src="../images/enrollment_hub/2.1-poster.jpg?v=1788942653" alt=""></button>
 				<button type="button" class="thumb" data-variant="2" aria-label="Visual 2: Statuses become a list on mobile"><img src="../images/enrollment_hub/2.2-poster.jpg?v=1788942653" alt=""></button>
 				<button type="button" class="thumb" data-variant="3" aria-label="Visual 3: Hovering a status focuses its segment"><img src="../images/enrollment_hub/2.3-poster.jpg?v=1788942653" alt=""></button>
 				<button type="button" class="thumb" data-variant="4" aria-label="Visual 4: The nudge opens a pre-filled draft"><img src="../images/enrollment_hub/2.4-poster.jpg?v=1788942803" alt=""></button>
-				<button type="button" class="thumb" data-variant="5" aria-label="Visual 5: TODO(leon): fifth detail"><span class="thumb__placeholder">05</span></button>
 				</div>
 			</div>
 
@@ -296,30 +288,6 @@
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
 							<span>TODO(leon): why sending in-product was ruled out.</span>
-						</li>
-					</ul>
-				</article>
-
-				<article class="variant" data-variant="5">
-					<h3 class="variant__name animated fadeInUp">5. TODO(leon): fifth detail</h3>
-					<ul class="checklist animated fadeInUp">
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what the detail is.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): why it matters.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): what it replaced.</span>
 						</li>
 					</ul>
 				</article>
@@ -556,10 +524,41 @@
 				return chosen.getAttribute('data-variant');
 			}
 
+			// A video reports a default 300x150 box until its metadata arrives, so
+			// a non-zero offsetHeight is not proof that a clip has been measured.
+			// Returns the element to measure, or null while its size is unknowable.
+			function measurableMedia(item) {
+				if (!item) return null;
+				var el = item.querySelector('img, video');
+				if (!el) return item.offsetHeight ? item : null; // placeholder fills the stage
+				var natW = el.tagName === 'VIDEO' ? el.videoWidth : el.naturalWidth;
+				var natH = el.tagName === 'VIDEO' ? el.videoHeight : el.naturalHeight;
+				if (!natW || !natH || !el.offsetWidth) return null;
+				// the rendered box must already reflect the natural ratio: dimensions
+				// are readable a frame before the box reflows to match them
+				if (Math.abs(el.offsetHeight - el.offsetWidth * natH / natW) > 2) return null;
+				return el;
+			}
+
+			// fadeInUp translates the header and stage while it runs, so anything
+			// measured mid-animation is wrong. Only CSS animations count here --
+			// the stage's opacity transitions run on every option change.
+			function entryAnimating(el) {
+				if (!el.getAnimations) return false;
+				var running = el.getAnimations({ subtree: true });
+				for (var i = 0; i < running.length; i++) {
+					if (running[i].animationName && running[i].playState === 'running') return true;
+				}
+				return false;
+			}
+
+			var layoutRetries = 0;
+
 			// Size the trailing spacer so that, at the moment the pinned column
 			// releases (series bottom == visual bottom), the last option's badge
 			// sits at the same y as the top border of the large visual.
 			function layout() {
+				var pending = false;
 				for (var i = 0; i < seriesList.length; i++) {
 					var series = seriesList[i];
 					var tail = series.querySelector('.series__tail');
@@ -569,6 +568,13 @@
 					if (!tail || !visual || !stage || !variants.length) continue;
 
 					tail.style.height = '0px'; // measure without it
+
+					var allItems = series.querySelectorAll('.stage-item');
+					var stageReady = !entryAnimating(series);
+					for (var k = 0; stageReady && k < allItems.length; k++) {
+						if (!measurableMedia(allItems[k])) stageReady = false;
+					}
+					if (!stageReady) pending = true;
 
 					// Drop the copy column so the first option's badge starts level
 					// with the visual's top border rather than with the series
@@ -584,13 +590,12 @@
 								'.variant__label, .variant__name') || variants[0];
 							// the media is bottom-aligned in the stage, so its own top
 							// border is below stage.top whenever a later option is taller
-							var firstItem = series.querySelector('.stage-item');
-							var firstMedia = firstItem
-								? (firstItem.querySelector('img, video') || firstItem) : null;
-							// offsetHeight is 0 until the metadata lands; fall back to the
-							// stage's own top rather than dropping the column a whole
-							// stage height, and let the observers re-measure after
-							var mediaTop = (firstMedia && firstMedia.offsetHeight)
+							// stage.bottom depends on the tallest item, so every clip in the
+							// series has to be measured before any offset can be trusted
+							var firstMedia = stageReady ? measurableMedia(allItems[0]) : null;
+							// while a size is unknown, fall back to the stage's own top
+							// rather than dropping the column by most of a stage height
+							var mediaTop = firstMedia
 								? stage.getBoundingClientRect().bottom - firstMedia.offsetHeight
 								: stage.getBoundingClientRect().top;
 							var drop = mediaTop - firstHeader.getBoundingClientRect().top;
@@ -604,12 +609,10 @@
 					// The media is bottom-aligned in the stage, so its top border is
 					// stage bottom minus its own height. offsetHeight is used because
 					// inactive stage items carry a scale() that would skew a rect.
-					var items = series.querySelectorAll('.stage-item');
-					var lastItem = items.length ? items[items.length - 1] : null;
-					var media = lastItem
-						? (lastItem.querySelector('img, video') || lastItem) : null;
+					var media = stageReady
+						? measurableMedia(allItems[allItems.length - 1]) : null;
 					var stageBox = stage.getBoundingClientRect();
-					var anchorTop = (media && media.offsetHeight)
+					var anchorTop = media
 						? stageBox.bottom - media.offsetHeight : stageBox.top;
 
 					// Measured against the copy column, not the series: when the copy is
@@ -637,6 +640,16 @@
 					var runway = window.innerHeight - restBottom;
 					document.body.style.paddingBottom =
 						Math.max(0, Math.ceil(runway - below)) + 'px';
+				}
+
+				// Some clip hasn't reported its size yet. Events alone aren't enough
+				// -- a video can fire loadedmetadata before this script runs -- so
+				// come back and measure again until every stage is known.
+				if (pending && layoutRetries < 60) {
+					layoutRetries++;
+					setTimeout(relayout, 150);
+				} else if (!pending) {
+					layoutRetries = 0;
 				}
 			}
 
