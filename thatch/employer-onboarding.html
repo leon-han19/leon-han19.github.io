@@ -540,8 +540,15 @@
 						if (sideBySide) {
 							var firstHeader = variants[0].querySelector(
 								'.variant__label, .variant__name') || variants[0];
-							var drop = stage.getBoundingClientRect().top
-								- firstHeader.getBoundingClientRect().top;
+							// the media is bottom-aligned in the stage, so its own top
+							// border is below stage.top whenever a later option is taller
+							var firstItem = series.querySelector('.stage-item');
+							var firstMedia = firstItem
+								? (firstItem.querySelector('img, video') || firstItem) : null;
+							var mediaTop = firstMedia
+								? stage.getBoundingClientRect().bottom - firstMedia.offsetHeight
+								: stage.getBoundingClientRect().top;
+							var drop = mediaTop - firstHeader.getBoundingClientRect().top;
 							content.style.paddingTop = Math.max(0, Math.round(drop)) + 'px';
 						}
 					}
