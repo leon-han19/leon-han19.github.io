@@ -46,7 +46,7 @@
 <!-- end copy paste for any new page -->
 
 <body>
-    <div class="container__items">
+    <div class="container__items" id="top">
         <nav class="nav-container">
             <a href="index.html" class="nav-item">Home</a>
             <div class="nav-container__items">
@@ -103,17 +103,23 @@
             <p class="text">Masava recently raised their $4 million seed round and are earning $300K ARR on these designs. They plan to hire full-time designers to build upon this foundation.</p>
         </div>
 
-        <div class="animated fadeInUp">
-			<div class="footer-container">
-				<a href="mailto:leon.han2001@gmail.com" target="_blank" class="link">Email</a>
-                <a href="leon_han_resume_F23.pdf" target="_blank" class="link">Resume</a>
-                <a href="https://www.linkedin.com/in/leon-han/" target="_blank" class="link">Linkedin</a>
-                <a href="https://twitter.com/leonhan_" target="_blank" class="link">Twitter</a>
-			</div>
-			<div class="bottom-bar">
-				<p class="footer-text">Last updated: October 5, 2023</p>
-			</div> 
-		</div>
+        <div class="page-nav animated fadeInUp">
+        	<a href="index.html" class="page-nav__link">
+        		<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        			<line x1="19" y1="12" x2="5" y2="12"></line>
+        			<polyline points="12 19 5 12 12 5"></polyline>
+        		</svg>
+        		Back home
+        	</a>
+        	<a href="#top" class="page-nav__link" data-scroll-top>
+        		Back to top
+        		<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        			<polyline points="17 11 12 6 7 11"></polyline>
+        			<polyline points="17 18 12 13 7 18"></polyline>
+        		</svg>
+        	</a>
+        </div>
     </div>
+	<script src="js/page-nav.js"></script>
 </body>
 </html>

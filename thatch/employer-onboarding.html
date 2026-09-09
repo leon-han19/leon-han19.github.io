@@ -1,0 +1,581 @@
+<!-- start copy paste for any new page -->
+<!DOCTYPE html>
+<html lang="en" class="sr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDWRSKG4EB"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JDWRSKG4EB');
+    </script>
+
+	<title>Employer onboarding &ndash; Leon Han</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+  	<meta name="keywords" content="leon han, thatch, ux, designer, product, employer onboarding, healthcare benefits">
+  	<meta name="description" content="Crafting the entire employer onboarding flow at Thatch">
+	<link rel="stylesheet" href="../styles/main.css?v=3">
+	<link rel="stylesheet" href="../styles/animate.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+	<script src="https://kit.fontawesome.com/965161686c.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="icon" href="../images/site-logo.png">
+	<style>
+		body {
+		  font-family: 'Instrument Sans', sans-serif;
+		  background-color: #fafafa;
+		}
+	</style>
+</head>
+<!-- end copy paste for any new page -->
+
+<body>
+	<div class="container__items" id="top">
+		<nav class="nav-container">
+			<a href="../index.html" class="nav-item">Home</a>
+			<div class="nav-container__items">
+				<a href="../leon_han_resume_F23.pdf" target="_blank" class="nav-item">Resume</a>
+				<a href="https://docs.google.com/spreadsheets/d/1nu-qN2dBS2ePbtazOf_W9XUjKEnYspRq88g5iAw345c/edit?usp=sharing" target="_blank" class="nav-item-middle">Bookshelf</a>
+				<a href="../about.html" class="nav-item">About</a>
+			</div>
+		</nav>
+
+		<!-- project context -->
+		<div class="title-container animated fadeInUp">
+			<a href="../index.html" class="back-button" style="text-decoration: none;">
+				<span class="material-symbols-outlined" style="color: #555555;">
+					arrow_back
+				</span>
+			</a>
+			<h1 class="heading-1">Thatch &ndash; Crafting the entire employer onboarding flow</h1>
+		</div>
+
+		<div class="title-container animated fadeInUp">
+			<p class="text"><b>A brief note on how <a class="link" href="https://thatch.ai/" target="_blank">Thatch</a> works</b>: instead of picking one plan for many employees with different health needs, employers set a monthly budget and each employee decides how to use it themselves. Any money not spent on insurance plans accumulates month-over-month to spend on anything HSA eligible. The employer saves time (since Thatch handles the administration) and money from not having to pay for an expensive group insurance plan that most of their employees won&rsquo;t even nearly make full use of.</p>
+			<div class="callout">
+				<p class="text">🚨</p>
+				<p class="text"><b>Problem:</b> The previous onboarding flow didn&rsquo;t make this value prop clear &ndash; it was too long, too vague, and wasn&rsquo;t guided or opinionated enough.</p>
+			</div>
+            <div class="callout">
+				<p class="text">🎯</p>
+				<p class="text"><b>Goal:</b> use progressive disclosure and compelling storytelling to educate employers on the benefits of Thatch, and instil enough trust in what they were buying from us to walk through the flow and invite their employees, all on their own..</p>
+			</div>
+		</div>
+
+		<!-- Series 1: 5 options, sticky until the carousel is exhausted -->
+		<section class="series" data-series="1">
+			<div class="series__visual">
+				<div class="series__header animated fadeInUp">
+					<h2 class="series__decision">The experience of getting to your quote</h2>
+				</div>
+				<div class="series__stage animated fadeInUp">
+				<figure class="stage-item is-active" data-variant="1">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-2.1-poster.jpg?v=1788932836"
+					       muted loop playsinline preload="auto" aria-label="The landing page that opens the flow">
+						<source src="../images/employer-onboarding-2.1.mp4?v=1788931316" type="video/mp4">
+					</video>
+				</figure>
+				<figure class="stage-item" data-variant="2">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-2.2-poster.jpg?v=1788932836"
+					       muted loop playsinline preload="auto" aria-label="Entering industry, state, coverage start date and headcount">
+						<source src="../images/employer-onboarding-2.2.mp4?v=1788931488" type="video/mp4">
+					</video>
+				</figure>
+				<figure class="stage-item" data-variant="3">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-2.3-poster.jpg?v=1788932836"
+					       muted loop playsinline preload="auto" aria-label="Asking whether the employer has a current plan to compare against">
+						<source src="../images/employer-onboarding-2.3.mp4?v=1788931655" type="video/mp4">
+					</video>
+				</figure>
+				<figure class="stage-item" data-variant="4">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-2.4-poster.jpg?v=1788933718"
+					       muted loop playsinline preload="auto" aria-label="Adding employees manually or by uploading a CSV">
+						<source src="../images/employer-onboarding-2.4.mp4?v=1788933328" type="video/mp4">
+					</video>
+				</figure>
+				<figure class="stage-item" data-variant="5">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-2.5-poster.jpg?v=1788934991"
+					       muted loop playsinline preload="auto" aria-label="The finished quote with suggested budget options">
+						<source src="../images/employer-onboarding-2.5.mp4?v=1788933984" type="video/mp4">
+					</video>
+				</figure>
+				</div>
+				<div class="series__caption">
+					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">Getting started</span></p>
+					<p class="caption-item" data-variant="2"><span class="caption-item__status">Basic company info</span></p>
+					<p class="caption-item" data-variant="3"><span class="caption-item__status">Current insurance</span></p>
+					<p class="caption-item" data-variant="4"><span class="caption-item__status">Adding your employees</span></p>
+					<p class="caption-item" data-variant="5"><span class="caption-item__status">The quote</span></p>
+				</div>
+				<div class="series__carousel">
+				<button type="button" class="thumb is-active" data-variant="1" aria-label="Option 1: Getting started"><img src="../images/employer-onboarding-2.1-poster.jpg?v=1788932836" alt=""></button>
+				<button type="button" class="thumb" data-variant="2" aria-label="Option 2: Basic company info"><img src="../images/employer-onboarding-2.2-poster.jpg?v=1788932836" alt=""></button>
+				<button type="button" class="thumb" data-variant="3" aria-label="Option 3: Current insurance"><img src="../images/employer-onboarding-2.3-poster.jpg?v=1788932836" alt=""></button>
+				<button type="button" class="thumb" data-variant="4" aria-label="Option 4: Adding your employees"><img src="../images/employer-onboarding-2.4-poster.jpg?v=1788933718" alt=""></button>
+				<button type="button" class="thumb" data-variant="5" aria-label="Option 5: The quote"><img src="../images/employer-onboarding-2.5-poster.jpg?v=1788934991" alt=""></button>
+				</div>
+			</div>
+
+			<div class="series__content">
+				<article class="variant" data-variant="1">
+					<h3 class="variant__name animated fadeInUp">Getting started</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Leads with the model rather than a form &mdash; budget in, employee choice out.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>A single primary action, so there&rsquo;s nothing to decide before starting.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Sets the expectation that this is short.</span>
+						</li>
+					</ul>
+				</article>
+
+				<article class="variant" data-variant="2">
+					<h3 class="variant__name animated fadeInUp">Basic company info</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Asks only what the benchmark needs: industry, state, start date, headcount.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>The comparison panel fills in as you type.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Inline links explain why each field is needed.</span>
+						</li>
+					</ul>
+				</article>
+
+				<article class="variant" data-variant="3">
+					<h3 class="variant__name animated fadeInUp">Current insurance</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>One question with two clearly-labelled branches.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Each option spells out what it means for the quote.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>The panel previews the target plan being matched.</span>
+						</li>
+					</ul>
+				</article>
+
+				<article class="variant" data-variant="4">
+					<h3 class="variant__name animated fadeInUp">Adding your employees</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Manual entry for small teams, CSV upload for large ones.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Editing happens inline, so mistakes are cheap to fix.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Explains that pricing varies by age, location and family size.</span>
+						</li>
+					</ul>
+				</article>
+
+				<article class="variant" data-variant="5">
+					<h3 class="variant__name animated fadeInUp">The quote</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Three benchmarked options instead of a blank number.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Estimated monthly cost stays visible while comparing.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>The employee-level impact sits directly beneath.</span>
+						</li>
+					</ul>
+				</article>
+
+				<div class="series__tail" aria-hidden="true"></div>
+			</div>
+		</section>
+		<!-- Series 2: 3 options, sticky until the carousel is exhausted -->
+		<section class="series" data-series="2">
+			<div class="series__visual">
+				<div class="series__header animated fadeInUp">
+					<h2 class="series__decision">Options for quote page layout</h2>
+				</div>
+				<div class="series__stage animated fadeInUp">
+				<figure class="stage-item is-active" data-variant="1">
+					<!-- Muted + looping + no controls: plays like a GIF, but real
+					     video compression. The poster covers the load. -->
+					<video class="stage-video" poster="../images/employer-onboarding-1.1-poster.jpg?v=1788932836"
+					       muted loop playsinline preload="auto" aria-label="The quote page in a single column, with the action bar collapsing on scroll">
+						<source src="../images/employer-onboarding-1.1.mp4?v=1788922384" type="video/mp4">
+					</video>
+				</figure>
+				<figure class="stage-item" data-variant="2">
+					<img src="../images/employer-onboarding-1.2.png?v=1788832240" alt="A two-column layout with the budget controls beside the employee impact">
+				</figure>
+				<figure class="stage-item" data-variant="3">
+					<div class="visual-placeholder">
+						<p class="visual-placeholder__label">Option 03</p>
+						<p class="visual-placeholder__hint">A slider from lean to generous</p>
+					</div>
+				</figure>
+				</div>
+				<div class="series__caption">
+					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">Shipped</span> &middot; Single column with collapsing actions</p>
+					<p class="caption-item" data-variant="2"><span class="caption-item__status">Explored</span> &middot; Controls and impact side by side</p>
+					<p class="caption-item" data-variant="3"><span class="caption-item__status">Explored</span> &middot; A slider from lean to generous</p>
+				</div>
+				<div class="series__carousel">
+				<button type="button" class="thumb is-active" data-variant="1" aria-label="Option 1, shipped: Single column with collapsing actions"><img src="../images/employer-onboarding-1.1-poster.jpg?v=1788932836" alt=""></button>
+				<button type="button" class="thumb" data-variant="2" aria-label="Option 2, explored: Controls and impact side by side"><img src="../images/employer-onboarding-1.2.png?v=1788832240" alt=""></button>
+				<button type="button" class="thumb" data-variant="3" aria-label="Option 3, explored: A slider from lean to generous"><span class="thumb__placeholder">03</span></button>
+				</div>
+			</div>
+
+			<div class="series__content">
+				<article class="variant" data-variant="1">
+					<p class="variant__label variant__label--shipped animated fadeInUp">Shipped</p>
+					<h3 class="variant__name animated fadeInUp">Single column with collapsing actions</h3>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Pre-set budget options, so an employer picks something that already works for their team instead of starting from a blank field.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>Progressive disclosure keeps the common path short &mdash; &ldquo;Have a specific price or plan?&rdquo; stays tucked away until someone actually needs it.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							<span>A single column with the actions collapsing on scroll, so the controls and the impact on each employee get read in turn rather than competing for attention.</span>
+						</li>
+					</ul>
+				</article>
+
+				<article class="variant" data-variant="2">
+					<p class="variant__label variant__label--explored animated fadeInUp">Explored</p>
+					<h3 class="variant__name animated fadeInUp">Controls and impact side by side</h3>
+					<p class="text animated fadeInUp">The obvious alternative was to sit the two halves next to each other &mdash; budget controls on one side, the impact on employees on the other, both in view at once. I went back and forth on this one for a while.</p>
+					<p class="text animated fadeInUp">Splitting the width was what killed it. Neither side had enough room: the budget options collapsed to bare numbers, with no space for the line that explains what each one actually gets an employee. That explanation is the whole point of showing three options.</p>
+					<p class="text animated fadeInUp">Having both halves live at once also left the employer with nowhere to look first. The single column shows less at any one moment, but what it does show is legible.</p>
+				</article>
+
+				<article class="variant" data-variant="3">
+					<p class="variant__label variant__label--explored animated fadeInUp">Explored</p>
+					<h3 class="variant__name animated fadeInUp">A slider from lean to generous</h3>
+					<p class="text animated fadeInUp">A slider with cost updating live as you drag, anchored by labels at each end.</p>
+					<p class="text animated fadeInUp">It made the range legible and was genuinely enjoyable to use, but it framed the budget as a dial to fiddle with rather than a decision with defensible answers. It also buried the benchmark: nothing on screen said which point on the track was normal for a company like theirs.</p>
+				</article>
+
+				<div class="series__tail" aria-hidden="true"></div>
+			</div>
+		</section>
+		<!-- Series 3: 2 options, sticky until the carousel is exhausted -->
+		<section class="series" data-series="3">
+			<div class="series__visual">
+				<div class="series__header animated fadeInUp">
+					<h2 class="series__decision">Let employers leave and come back</h2>
+				</div>
+				<div class="series__stage animated fadeInUp">
+				<figure class="stage-item is-active" data-variant="1">
+					<div class="visual-placeholder">
+						<p class="visual-placeholder__label">Option 01</p>
+						<p class="visual-placeholder__hint">Named steps with continuous save</p>
+					</div>
+				</figure>
+				<figure class="stage-item" data-variant="2">
+					<div class="visual-placeholder">
+						<p class="visual-placeholder__label">Option 02</p>
+						<p class="visual-placeholder__hint">One long autosaving form</p>
+					</div>
+				</figure>
+				</div>
+				<div class="series__caption">
+					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">Shipped</span> &middot; Named steps with continuous save</p>
+					<p class="caption-item" data-variant="2"><span class="caption-item__status">Explored</span> &middot; One long autosaving form</p>
+				</div>
+				<div class="series__carousel">
+				<button type="button" class="thumb is-active" data-variant="1" aria-label="Option 1, shipped: Named steps with continuous save"><span class="thumb__placeholder">01</span></button>
+				<button type="button" class="thumb" data-variant="2" aria-label="Option 2, explored: One long autosaving form"><span class="thumb__placeholder">02</span></button>
+				</div>
+			</div>
+
+			<div class="series__content">
+				<article class="variant" data-variant="1">
+					<p class="variant__label variant__label--shipped animated fadeInUp">Shipped</p>
+					<h3 class="variant__name animated fadeInUp">Named steps with continuous save</h3>
+					<p class="text animated fadeInUp">Onboarding needs information employers rarely have to hand &mdash; a full roster, details of current coverage, renewal dates. Any flow that demands it all in one sitting will lose people at the first gap.</p>
+					<p class="text animated fadeInUp">The flow is broken into named steps, so it&rsquo;s clear what&rsquo;s done and what&rsquo;s left, with progress saved continuously and an explicit way to save for later.</p>
+					<p class="text animated fadeInUp">A step someone is blocked on becomes a pause instead of an abandoned signup.</p>
+				</article>
+
+				<article class="variant" data-variant="2">
+					<p class="variant__label variant__label--explored animated fadeInUp">Explored</p>
+					<h3 class="variant__name animated fadeInUp">One long autosaving form</h3>
+					<p class="text animated fadeInUp">A single scrolling page holding every field, saving quietly as you go.</p>
+					<p class="text animated fadeInUp">It removed all the transitions and was the fastest path for anyone with their details ready. The problem was legibility of progress: with no named sections, an employer who got stuck couldn&rsquo;t tell whether they were nearly finished or barely started, and the page gave them no way to see which specific piece was blocking them.</p>
+				</article>
+
+				<div class="series__tail" aria-hidden="true"></div>
+			</div>
+		</section>
+
+		<div class="title-container animated fadeInUp">
+			<div class="callout">
+				<p class="text">📈</p>
+				<p class="text"><b>Impact:</b> A v0 with a minimal, core set of changes was released first, and already saw a 50% increase in employers seeing a quote and a 27% increase in employers sending their first invites.</p>
+			</div>
+		</div>
+
+		<div class="page-nav animated fadeInUp">
+			<a href="../index.html" class="page-nav__link">
+				<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<line x1="19" y1="12" x2="5" y2="12"></line>
+					<polyline points="12 19 5 12 12 5"></polyline>
+				</svg>
+				Back home
+			</a>
+			<a href="#top" class="page-nav__link" data-scroll-top>
+				Back to top
+				<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<polyline points="17 11 12 6 7 11"></polyline>
+					<polyline points="17 18 12 13 7 18"></polyline>
+				</svg>
+			</a>
+		</div>
+	</div>
+
+	<script>
+		// Each series pins its own visual, cycles through its options as you scroll,
+		// then releases so the next series takes over. Option 1 is active in the
+		// markup, so without IntersectionObserver the page still reads correctly.
+		(function () {
+			var seriesList = document.querySelectorAll('.series');
+			if (!seriesList.length) return;
+
+			var reduceMotion = window.matchMedia
+				&& window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			function setPlayback(item, isActive) {
+				var video = item.querySelector('video');
+				if (!video) return;
+				if (isActive && !reduceMotion) {
+					var played = video.play();
+					if (played && played.catch) played.catch(function () {});
+				} else {
+					video.pause();
+					try { video.currentTime = 0; } catch (e) {}
+				}
+			}
+
+			function show(series, id) {
+				if (series.getAttribute('data-current') === id) return; // no redundant restarts
+				series.setAttribute('data-current', id);
+
+				var items = series.querySelectorAll('.stage-item');
+				for (var i = 0; i < items.length; i++) {
+					var onStage = items[i].getAttribute('data-variant') === id;
+					items[i].classList.toggle('is-active', onStage);
+					setPlayback(items[i], onStage);
+				}
+
+				var captions = series.querySelectorAll('.caption-item');
+				for (var c = 0; c < captions.length; c++) {
+					captions[c].classList.toggle('is-active',
+						captions[c].getAttribute('data-variant') === id);
+				}
+
+				var thumbs = series.querySelectorAll('.thumb');
+				for (var j = 0; j < thumbs.length; j++) {
+					var current = thumbs[j].getAttribute('data-variant') === id;
+					thumbs[j].classList.toggle('is-active', current);
+					thumbs[j].setAttribute('aria-current', current ? 'true' : 'false');
+				}
+			}
+
+			// clicking a thumbnail scrolls to that option's copy, so scroll position
+			// stays the single source of truth for what's on stage
+			var thumbs = document.querySelectorAll('.thumb');
+			for (var t = 0; t < thumbs.length; t++) {
+				thumbs[t].addEventListener('click', function () {
+					var series = this.closest('.series');
+					var target = series.querySelector(
+						'.variant[data-variant="' + this.getAttribute('data-variant') + '"]');
+					if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				});
+			}
+
+			// The stage advances only once an option's header text has risen to the
+			// middle of the large visual. Anchoring to the text rather than to
+			// the block boundary means block padding can't trigger an early switch.
+			function currentVariant(series) {
+				var stage = series.querySelector('.series__stage');
+				var variants = series.querySelectorAll('.variant');
+				if (!stage || !variants.length) return null;
+				var box = stage.getBoundingClientRect();
+				var line = (box.top + box.bottom) / 2; // middle of the visual
+				var chosen = variants[0];
+				for (var i = 0; i < variants.length; i++) {
+					var header = variants[i].querySelector('.variant__label, .variant__name')
+						|| variants[i];
+					if (header.getBoundingClientRect().top <= line) chosen = variants[i];
+				}
+				return chosen.getAttribute('data-variant');
+			}
+
+			// Size the trailing spacer so that, at the moment the pinned column
+			// releases (series bottom == viewport bottom), the last option's header
+			// sits at the same y as the series header on the left.
+			function layout() {
+				for (var i = 0; i < seriesList.length; i++) {
+					var series = seriesList[i];
+					var tail = series.querySelector('.series__tail');
+					var visual = series.querySelector('.series__visual');
+					var header = series.querySelector('.series__header');
+					var variants = series.querySelectorAll('.variant');
+					if (!tail || !visual || !header || !variants.length) continue;
+
+					tail.style.height = '0px'; // measure without it
+					var last = variants[variants.length - 1];
+					var lastHeader = last.querySelector('.variant__label, .variant__name') || last;
+					// header's offset inside the pinned column (sticky top cancels out here)
+					var headerY = header.getBoundingClientRect().top
+						- visual.getBoundingClientRect().top;
+					// these are both viewport-relative, so the gap is scroll-independent
+					var gap = series.getBoundingClientRect().bottom
+						- lastHeader.getBoundingClientRect().top;
+					var needed = visual.getBoundingClientRect().height - headerY;
+					tail.style.height = Math.max(0, Math.round(needed - gap)) + 'px';
+				}
+			}
+
+			var ticking = false;
+
+			function update() {
+				ticking = false;
+				for (var i = 0; i < seriesList.length; i++) {
+					var id = currentVariant(seriesList[i]);
+					if (id) show(seriesList[i], id);
+				}
+			}
+
+			function onScroll() {
+				if (ticking) return;
+				ticking = true;
+				window.requestAnimationFrame(update);
+			}
+
+			function relayout() {
+				layout();
+				update();
+			}
+
+			// fadeInUp leaves the header transformed while it runs, which would make
+			// layout() measure an offset position -- so re-measure once it settles.
+			var relayoutTimer = null;
+			function scheduleRelayout() {
+				if (relayoutTimer) clearTimeout(relayoutTimer);
+				relayoutTimer = setTimeout(relayout, 60);
+			}
+
+			window.addEventListener('scroll', onScroll, { passive: true });
+			window.addEventListener('resize', relayout);
+			document.addEventListener('animationend', function (e) {
+				if (e.target && e.target.closest && e.target.closest('.series')) scheduleRelayout();
+			}, true);
+			relayout();
+			if (document.fonts && document.fonts.ready) {
+				document.fonts.ready.then(relayout); // text heights change with the webfont
+			}
+
+			if (!('IntersectionObserver' in window)) return;
+
+			// don't decode clips for a series that isn't on screen
+			var seriesObserver = new IntersectionObserver(function (entries) {
+				for (var i = 0; i < entries.length; i++) {
+					var items = entries[i].target.querySelectorAll('.stage-item');
+					for (var j = 0; j < items.length; j++) {
+						setPlayback(items[j],
+							entries[i].isIntersecting && items[j].classList.contains('is-active'));
+					}
+				}
+			}, { threshold: 0 });
+
+			for (var q = 0; q < seriesList.length; q++) {
+				seriesObserver.observe(seriesList[q]);
+			}
+		})();
+	</script>
+	<script src="../js/page-nav.js"></script>
+</body>
+</html>

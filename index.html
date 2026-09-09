@@ -21,10 +21,10 @@
 	<link rel="stylesheet" href="styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-
-	<script src="https://kit.fontawesome.com/965161686c.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">	<script src="https://kit.fontawesome.com/965161686c.js"></script>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="js/scroll.js"></script>
@@ -35,9 +35,10 @@
     	$(this).addClass('active');
 	});
 	</script>
+
 	<style>
 		body {
-		  font-family: 'Open Sans', sans-serif;
+		  font-family: 'Instrument Sans', sans-serif;
 		  background-color: #fafafa;
 		}
 	</style>
@@ -47,85 +48,129 @@
 <body>
 	<div class="container__items">
 		<!-- <div class="outer-nav-container"> -->
-			<nav class="nav-container">
-				<a href="index.html" class="nav-item">Home</a>
-				<div class="nav-container__items">
-					<a href="leon_han_resume_F23.pdf" target="_blank" class="nav-item">Resume<a>
-					<a href="https://docs.google.com/spreadsheets/d/1nu-qN2dBS2ePbtazOf_W9XUjKEnYspRq88g5iAw345c/edit?usp=sharing" target="_blank" class="nav-item-middle">Bookshelf</a>
-					<a href="about.html" class="nav-item">About</a>
-				</div>
-			</nav>
+		<nav class="nav-container">
+			<a href="index.html" class="nav-item">Home</a>
+			<div class="nav-container__items">
+				<a href="leon_han_resume_F23.pdf" target="_blank" class="nav-item">Resume<a>
+				<a href="https://docs.google.com/spreadsheets/d/1nu-qN2dBS2ePbtazOf_W9XUjKEnYspRq88g5iAw345c/edit?usp=sharing" target="_blank" class="nav-item-middle">Bookshelf</a>
+				<a href="about.html" class="nav-item">About</a>
+			</div>
+		</nav>
 
 		<div class="title-container animated fadeInUp">
 			<h1 class="title"><p class="name">Leon Han</p></h1>
 		</div>
 		<div class="title-container animated fadeInUp">
-			<p class="intro">Designer and Engineer focused on system level interaction and visual design, and Engineering alumni from UWaterloo.</p>
-			<p class="intro" style="padding-top: 16px;padding-bottom: 40px;">Currently building better health insurance infrastructure at <a href="https://thatch.ai/" class="link">Thatch</a>. Previously designed at <a href="mercury.html" class="link">Mercury</a> and led sponsorship for <a href="https://hackthenorth.com/" target="_blank" class="link">Hack the North</a>.</p>
+			<p class="intro">Founding product designer at <a href="https://thatch.ai/" class="link">Thatch</a>, building a healthcare system people love. Previously designed at <a href="mercury.html" class="link">Mercury</a>.</p>
 		</div>
 
 		<div class="animated fadeInUp">
 			<div class="project-container">
-				<a href="mercury.html" style="text-decoration: none;">
+				<a href="thatch/employer-onboarding.html" style="text-decoration: none;">
 					<div class="project-image-container">
-						<img src="images/mercury.png">
+						<img src="images/employer-onboarding.png">
 					</div>
 					<div class="project-text-container">
-						<p class="project-heading">Building trust in Mercury Treasury</p>
-						<p class="company">Mercury</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="animated fadeInUp">
-			<div class="project-container">
-				<a href="masava.html" style="text-decoration: none">
-					<div class="project-image-container">
-						<img src="images/masava.png">
-					</div>
-					<div class="project-text-container">
-						<p class="project-heading">Re-imagining liquor sales and distribution</p>
-						<p class="company">Masava</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="animated fadeInUp">
-			<div class="project-container">
-				<a href="htn.html" style="text-decoration: none">
-					<div class="project-image-container">
-						<img src="images/HTN.png">
-					</div>
-					<div class="project-text-container">
-						<p class="project-heading">Shaping the project submission experience for 1,600 hackers</p>
-						<p class="company">Hack the North</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="animated fadeInUp">
-			<div class="project-container">
-				<a href="https://leon-han19.notion.site/Nearside-simplifying-the-payment-experience-for-small-businesses-03fdd59d8b154faa85139fdc018ab91a?pvs=4" style="text-decoration: none">
-					<div class="project-image-container">
-						<img src="images/hatch.png">
-					</div>
-					<div class="project-text-container">
-						<p class="project-heading">Simplifying ACHs and checks for small business owners</p>
-						<p class="company">Nearside</p>
+						<p class="project-heading">Crafting the entire employer onboarding flow<span class="details-affordance"><span class="view-details">View details</span><svg class="title-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg></span></p>
+						<p class="company">Thatch</p>
 					</div>
 				</a>
 			</div>
 		</div>
 
 		<div class="animated fadeInUp">
+			<div class="project-container">
+				<a href="thatch/enrollment-hub.html" style="text-decoration: none;">
+					<img src="images/enrollment-hub.png">
+					<div class="project-text-container">
+						<p class="project-heading">Pushing enrollment rates up<span class="details-affordance"><span class="view-details">View details</span><svg class="title-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg></span></p>
+						<p class="company">Thatch</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!--
+		<div class="accordion-item animated fadeInUp">
+			<div class="accordion-header">
+				<svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<polyline points="6 9 12 15 18 9"></polyline>
+				</svg>
+				<span>See old work</span>
+			</div>
+			<div class="accordion-content">
+				<div class="accordion-content-inner">
+					<div class="animated fadeInUp">
+						<div class="project-container">
+							<a href="mercury.html" style="text-decoration: none;">
+								<div class="project-image-container">
+									<img src="images/mercury.png">
+								</div>
+								<div class="project-text-container">
+									<p class="project-heading">Building trust in Mercury Treasury</p>
+									<p class="company">Mercury</p>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="animated fadeInUp">
+						<div class="project-container">
+							<a href="htn.html" style="text-decoration: none">
+								<div class="project-image-container">
+									<img src="images/HTN.png">
+								</div>
+								<div class="project-text-container">
+									<p class="project-heading">Shaping the project submission experience for 1,600 hackers</p>
+									<p class="company">Hack the North</p>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="animated fadeInUp">
+						<div class="project-container">
+							<a href="https://leon-han19.notion.site/Nearside-simplifying-the-payment-experience-for-small-businesses-03fdd59d8b154faa85139fdc018ab91a?pvs=4" style="text-decoration: none">
+								<div class="project-image-container">
+									<img src="images/hatch.png">
+								</div>
+								<div class="project-text-container">
+									<p class="project-heading">Simplifying ACHs and checks for small business owners</p>
+									<p class="company">Nearside</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div><
+		</div>
+		<script>
+			document.querySelector('.accordion-header').addEventListener('click', function () {
+				const item = this.parentElement;
+				const content = item.querySelector('.accordion-content');
+				const label = this.querySelector('span');
+				const isActive = item.classList.contains('active');
+
+				item.classList.toggle('active');
+				content.style.maxHeight = isActive ? null : content.scrollHeight + 'px';
+
+				label.textContent = isActive ? 'See old work' : 'Hide old work';
+			});		
+		</script>
+		-->
+	  
+	  	<div class="animated fadeInUp">
 			<div class="footer-container">
 				<a href="mailto:leon.han2001@gmail.com" target="_blank" class="link">Email</a>
-                <a href="leon_han_resume_F23.pdf" target="_blank" class="link">Resume</a>
-                <a href="https://www.linkedin.com/in/leon-han/" target="_blank" class="link">Linkedin</a>
-                <a href="https://twitter.com/leonhan_" target="_blank" class="link">Twitter</a>
+				<a href="leon_han_resume_F23.pdf" target="_blank" class="link">Resume</a>
+				<a href="https://www.linkedin.com/in/leon-han/" target="_blank" class="link">Linkedin</a>
 			</div>
 			<div class="bottom-bar">
-				<p class="footer-text">Last updated: June 9, 2024</p>
+				<p class="footer-text">Last updated: Sep 6, 2026</p>
 			</div> 
 		</div>
 	</div>

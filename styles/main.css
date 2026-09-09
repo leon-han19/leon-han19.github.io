@@ -1,10 +1,46 @@
-.html {
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   background: #fafafa;
+}
+
+.accordion-item {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.accordion-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+  padding: 8px
+}
+
+.accordion-header:hover {
+  background-color: #f0f0f0;
+}
+.chevron {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.accordion-item.active .chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
 }
 
 .container__items {
@@ -212,36 +248,26 @@ body {
   margin: 0 auto;
   margin-top: 40px;
   text-align: left;
-  transition-property: transform;
-  transition-duration: 0.2s;
 }
 
 .project-container img {
+  background: #FAFAFA;
   flex: 1;
-  padding-top: 40px;
-  max-width: 80%;
+  max-width: 100%;
   display: block;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  transition-property: background;
-}
-
-.project-image-container {
-  max-width: 600px;
-  border-radius: 8px;
-  width: 100%;
-  background: #F3F3F3;
-  transition-property: transform, background;
+  transition-property: background, transform;
   transition-duration: 0.2s;
 }
 
-.project-container:hover {
-  transform: translateY(-5px);
+.project-container:hover img {
+  transform: translateY(-4px);
 }
 
-.project-container:hover .project-image-container {
-  background: #EEEEEE;
+.project-container img:hover {
+  background: #EFEFEF; /* whatever color you want on hover */
 }
 
 @media (max-width: 600px) {
@@ -273,10 +299,48 @@ body {
   color: #555555;
 }
 
+.details-affordance { /* holds "View details" + chevron at the end of the title */
+  display: inline-flex;
+  align-items: baseline;   /* label baseline defines the wrapper's baseline */
+  vertical-align: baseline; /* which then sits on the title's baseline */
+  margin-left: 6px;
+}
+
+.view-details {
+  max-width: 0;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  font-size: 16px;
+  color: #6e6e6e;
+  transition: max-width 0.25s ease, margin-left 0.25s ease, margin-right 0.25s ease, opacity 0.2s ease;
+}
+
+.title-chevron {
+  flex-shrink: 0;
+  align-self: center;
+  color: #6e6e6e;
+  transition: transform 0.25s ease, color 0.2s;
+}
+
+.project-container:hover .view-details {
+  max-width: 96px; /* "View details" measures ~88px at 16px Instrument Sans */
+  margin-left: 8px;
+  margin-right: 5px;
+  opacity: 1;
+}
+
+.project-container:hover .title-chevron {
+  transform: translateX(2px);
+  color: #555555;
+}
+
 .company {
   text-align: left;
-  color: #a5a5a5;
-  font-size: 12px;
+  color: #6e6e6e;
+  font-size: 16px;
   font-weight: 400;
   transition: color 0.2s;
   line-height: 2px;
@@ -422,6 +486,12 @@ body {
   color: #555555;
 }
 
+.text b,
+.text strong { /* <b> defaults to "bolder", which resolves to only 400 from
+                  .text's weight of 300 -- so state the weight explicitly */
+  font-weight: 600;
+}
+
 .callout {
   display:flex;
   flex-direction: row;
@@ -435,7 +505,7 @@ body {
 }
 
 .callout .text {
-  font-weight: 500;
+  font-weight: 400; /* regular; the bold lives on the <b> prefix */
   margin-bottom: 0px;
 }
 
@@ -487,5 +557,346 @@ ul li {
 }
 
 
+
 /************************************************************************/
 /* case study styles */
+
+
+/* scroll-driven case study: per-series sticky visual + variant carousel */
+/************************************************************************/
+.series {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* visual 2/3, content 1/3 */
+  gap: 48px;
+  max-width: 1248px; /* 1200px of content + the 24px gutters below */
+  margin: 0 auto;
+  padding: 0 24px; /* columns never touch the viewport edge */
+  box-sizing: border-box;
+  align-items: start;
+}
+
+/* sticky within its own series, so it releases once the carousel is done
+   and the next series takes over */
+.series__visual {
+  position: sticky;
+  top: 88px; /* pinned offset -- independent of the gap between series */
+  height: auto; /* hug the content: a fixed 100vh leaves dead column between series */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 0; /* top: room above the header; bottom: gap to the next series */
+  box-sizing: border-box;
+}
+
+.series__header { /* above the visual, persists across the series' options */
+  flex-shrink: 0;
+  margin-bottom: 30px; /* + the 10px column gap = 40px under the header */
+}
+
+.series__decision { /* index and heading share one line */
+  margin-bottom: 0;
+  font-size: 28px; /* largest that keeps the longest heading unwrapped, with
+                      headroom for a wider fallback font (cap is ~31px) */
+  line-height: 1.3;
+  font-weight: 600;
+  color: #555555;
+}
+
+.series[data-series="1"] { /* clear the intro copy above it */
+  margin-top: 72px;
+}
+
+.series__stage {
+  display: grid;
+  min-height: 0;
+  margin-bottom: 14px; /* on top of the 10px column gap */
+}
+
+.stage-item {
+  grid-area: 1 / 1;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: scale(0.985);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.stage-item.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.stage-item img,
+.stage-item video {
+  display: block;
+  box-sizing: border-box; /* keep the border inside the max-width/height caps */
+  max-width: 100%;
+  max-height: 58vh;
+  border: 1px solid #e2e2e2; /* same light grey as the carousel thumbs */
+  border-radius: 8px;
+  /* no background: these exports are RGBA, and a fill shows through their
+     transparent margins as a grey frame around the screenshot */
+}
+
+.visual-placeholder { /* stand-in until a real screenshot or clip is dropped in */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 58vh;
+  border: 1px dashed #c9c9c9;
+  border-radius: 8px;
+  background: #F3F3F3;
+}
+
+.visual-placeholder__label {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6e6e6e;
+}
+
+.visual-placeholder__hint {
+  margin: 0;
+  padding: 0 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #6e6e6e;
+}
+
+/* describes whatever is currently on the stage */
+.series__caption {
+  display: grid;
+  flex-shrink: 0;
+}
+
+.caption-item {
+  grid-area: 1 / 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6e6e6e;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.caption-item.is-active {
+  opacity: 1;
+}
+
+.caption-item__status {
+  font-weight: 600;
+  color: #555555;
+}
+
+/* carousel of the options in this series */
+.series__carousel {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.thumb {
+  width: 108px;
+  height: 72px;
+  padding: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  background: #F3F3F3;
+  overflow: hidden;
+  cursor: pointer;
+  filter: grayscale(1); /* everything not on the stage reads as greyscale */
+  opacity: 0.55;
+  transition: filter 0.35s ease, opacity 0.35s ease,
+              border-color 0.35s ease, transform 0.35s ease;
+}
+
+.thumb:hover {
+  filter: grayscale(0.4);
+  opacity: 0.8;
+}
+
+.thumb.is-active {
+  filter: grayscale(0);
+  opacity: 1;
+  border-color: #6e6e6e;
+  transform: translateY(-2px);
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6e6e6e;
+}
+
+/* one scroll step per option */
+.variant {
+  min-height: 42vh;
+  box-sizing: border-box; /* keep padding inside the 75vh, not added to it */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.series__tail { /* height computed in JS; see layout() */
+  height: 0;
+}
+
+.variant__label {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.variant__label--shipped {
+  background: #E6E9F5;
+  color: #3f4a7a;
+}
+
+.variant__label--explored {
+  background: #EEEEEE;
+  color: #5a5a5a;
+}
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* the check icon replaces the bullet marker */
+}
+
+.checklist li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #555555;
+}
+
+.checklist__icon {
+  flex-shrink: 0;
+  margin-top: 4px; /* sits with the cap height of the first line */
+  color: #3f4a7a; /* same accent as the Shipped badge */
+}
+
+.variant__name {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+}
+
+@media (max-width: 900px) {
+  .series {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 600px; /* same measure as .title-container / .intro */
+    padding: 0; /* .container__items supplies the gutter, as it does for the title */
+  }
+
+
+  .series__decision {
+    font-size: 19px;
+  }
+
+  .series__visual {
+    top: 0; /* pin flush to the top when stacked */
+    height: auto; /* size to content so the visual can be full width */
+    padding: 16px 0;
+    background: #fafafa; /* keeps scrolling text from showing through */
+    z-index: 2;
+  }
+
+  /* soften the bottom edge so copy sliding underneath fades out rather than
+     being clipped against a hard line */
+  .series__visual::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: linear-gradient(to bottom, #fafafa 0%, rgba(250, 250, 250, 0) 100%);
+    pointer-events: none;
+  }
+
+  .stage-item img,
+  .stage-item video {
+    width: 100%; /* width, not height, is the constraint on mobile */
+    max-height: none;
+  }
+
+  .visual-placeholder {
+    max-height: none;
+  }
+
+  .thumb {
+    width: 76px;
+    height: 52px;
+  }
+
+  .variant {
+    min-height: 34vh;
+  }
+}
+/************************************************************************/
+/* scroll-driven case study */
+
+/* bottom page navigation (replaces the old footer on project pages) */
+/************************************************************************/
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.page-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #663399;
+  text-decoration: none;
+  background: linear-gradient(#FAFAFA 50%, #FAFAFA 50%, #FAFAFA);
+  transition: background 0.2s;
+}
+
+.page-nav__link:hover,
+.page-nav__link:focus {
+  background: linear-gradient(#FAFAFA 50%, #FCE9CC 50%, #FCE9CC);
+  color: #663399;
+  text-decoration: none;
+}
+
+.page-nav__icon {
+  flex-shrink: 0;
+}
+/************************************************************************/
+/* bottom page navigation */

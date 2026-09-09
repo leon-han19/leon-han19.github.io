@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <div class="container__items">
+    <div class="container__items" id="top">
 		<nav class="nav-container">
 			<a href="index.html" class="nav-item">Home</a>
 			<ul class="nav-container__items" style="list-style-type: none;">
@@ -68,16 +68,21 @@
         </div>
     </div>
 
-    <div class="animated fadeInUp">
-        <div class="icon-container" style="display: flex; justify-content: center; padding-top: 80px;">
-        <a href="mailto:leon.han2001@gmail.com" target="_blank" class="nav-item" style="margin-left: 32px; margin-right: 32px;">Email</a>
-        <a href="leon_han_resume_F23.pdf" target="_blank" class="nav-item" style="margin-left: 32px; margin-right: 32px;">Resume<a>
-        <a href="https://www.linkedin.com/in/leon-han/" target="_blank" class="nav-item" style="margin-left: 32px; margin-right: 24px;">Linkedin</a>
-        <a href="https://twitter.com/leonhan_" target="_blank" class="nav-item" style="margin-right: 32px;">Twitter</a>
-        </div>  
-        <div class="bottom-bar">
-        <p class="footer-text">Last updated: October 2, 2023</p>
-        </div>  
+    <div class="page-nav animated fadeInUp">
+    	<a href="index.html" class="page-nav__link">
+    		<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    			<line x1="19" y1="12" x2="5" y2="12"></line>
+    			<polyline points="12 19 5 12 12 5"></polyline>
+    		</svg>
+    		Back home
+    	</a>
+    	<a href="#top" class="page-nav__link" data-scroll-top>
+    		Back to top
+    		<svg class="page-nav__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    			<polyline points="17 11 12 6 7 11"></polyline>
+    			<polyline points="17 18 12 13 7 18"></polyline>
+    		</svg>
+    	</a>
     </div>
     <script>
         ScrollReveal().reveal('.nav-item');
@@ -86,6 +91,7 @@
         ScrollReveal().reveal('.sub-title');
         ScrollReveal().reveal('.experience');
     </script>
+	<script src="js/page-nav.js"></script>
 </body>
 
 </html>
