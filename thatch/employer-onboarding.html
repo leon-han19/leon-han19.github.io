@@ -365,8 +365,29 @@
 				<article class="variant" data-variant="3">
 					<p class="variant__label variant__label--explored animated fadeInUp">Roughly explored direction</p>
 					<h3 class="variant__name animated fadeInUp">A draggable allowance slider</h3>
-					<p class="text animated fadeInUp">A draggable slider set the monthly allowance, with each employee's coverage updating beneath it and a warning when the amount dropped too low for anyone to buy a plan.</p>
-					<p class="text animated fadeInUp">TODO(leon): why this didn't ship.</p>
+					<ul class="checklist animated fadeInUp">
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>I had hopes for the sliding interaction, but in practice it only works for flat allowances.</span>
+						</li>
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>Similar to above, action/input is required on both sides, and the side needing input will be inconsistent depending on which level of benefits is selected (i.e. slider on right fot "Same allowance for everybody" but nothing on right side for the other options)..</span>
+						</li>
+						<li>
+							<svg class="checklist__icon checklist__icon--cross" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+							<span>Click/drag is a more difficult interaction than simple clicking a button or typing a number.</span>
+						</li>
+					</ul>
 				</article>
 
 				<div class="series__tail" aria-hidden="true"></div>
@@ -506,6 +527,25 @@
 					if (!tail || !visual || !stage || !variants.length) continue;
 
 					tail.style.height = '0px'; // measure without it
+
+					// Drop the copy column so the first option's badge starts level
+					// with the visual's top border rather than with the series
+					// heading above it. Skipped once the columns stack, where the
+					// copy already sits below the visual.
+					var content = series.querySelector('.series__content');
+					if (content) {
+						content.style.paddingTop = '0px';
+						var sideBySide = Math.abs(visual.getBoundingClientRect().left
+							- content.getBoundingClientRect().left) > 1;
+						if (sideBySide) {
+							var firstHeader = variants[0].querySelector(
+								'.variant__label, .variant__name') || variants[0];
+							var drop = stage.getBoundingClientRect().top
+								- firstHeader.getBoundingClientRect().top;
+							content.style.paddingTop = Math.max(0, Math.round(drop)) + 'px';
+						}
+					}
+
 					var last = variants[variants.length - 1];
 					var lastHeader = last.querySelector('.variant__label, .variant__name') || last;
 
