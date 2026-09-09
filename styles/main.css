@@ -579,7 +579,7 @@ ul li {
    and the next series takes over */
 .series__visual {
   position: sticky;
-  top: 88px; /* pinned offset -- independent of the gap between series */
+  top: 112px; /* pinned offset -- independent of the gap between series */
   height: auto; /* hug the content: a fixed 100vh leaves dead column between series */
   display: flex;
   flex-direction: column;
@@ -604,6 +604,10 @@ ul li {
 
 .series[data-series="1"] { /* clear the intro copy above it */
   margin-top: 72px;
+}
+
+.series + .series { /* breathing room above each following series heading */
+  margin-top: 48px;
 }
 
 .series__stage {
