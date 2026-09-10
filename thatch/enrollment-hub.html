@@ -16,8 +16,8 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
   	<meta name="keywords" content="leon han, thatch, ux, designer, product, enrollment, healthcare benefits">
-  	<meta name="description" content="Pushing enrollment rates up at Thatch">
-	<link rel="stylesheet" href="../styles/main.css?v=1788946077">
+  	<meta name="description" content="Helping our largest employers manage enrollments at Thatch">
+	<link rel="stylesheet" href="../styles/main.css?v=1789028257">
 	<link rel="stylesheet" href="../styles/animate.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,7 +56,7 @@
 					arrow_back
 				</span>
 			</a>
-			<h1 class="heading-1">Thatch &ndash; Pushing enrollment rates up</h1>
+			<h1 class="heading-1">Thatch &ndash; Helping our largest employers manage enrollments</h1>
 		</div>
 
 		<div class="title-container animated fadeInUp">
@@ -440,12 +440,20 @@
 							// stage.bottom depends on the tallest item, so every clip in the
 							// series has to be measured before any offset can be trusted
 							var firstMedia = stageReady ? measurableMedia(allItems[0]) : null;
+							// Both offsets are measured inside their own column. Comparing
+							// the two columns directly would only hold while the visual is
+							// unpinned -- once it sticks it stops moving with the copy, and
+							// a measurement taken mid-scroll would be latched in wrong.
+							var visualTop = visual.getBoundingClientRect().top;
+							var stageBox0 = stage.getBoundingClientRect();
 							// while a size is unknown, fall back to the stage's own top
 							// rather than dropping the column by most of a stage height
-							var mediaTop = firstMedia
-								? stage.getBoundingClientRect().bottom - firstMedia.offsetHeight
-								: stage.getBoundingClientRect().top;
-							var drop = mediaTop - firstHeader.getBoundingClientRect().top;
+							var mediaInColumn = firstMedia
+								? (stageBox0.bottom - firstMedia.offsetHeight) - visualTop
+								: stageBox0.top - visualTop;
+							var headerInColumn = firstHeader.getBoundingClientRect().top
+								- content.getBoundingClientRect().top;
+							var drop = mediaInColumn - headerInColumn;
 							content.style.paddingTop = Math.max(0, Math.round(drop)) + 'px';
 						}
 					}
@@ -478,15 +486,24 @@
 				// windows the copy below it isn't enough, so top the page up.
 				var lastSeries = seriesList[seriesList.length - 1];
 				if (lastSeries) {
-					document.body.style.paddingBottom = '0px';
 					var lastVisual = lastSeries.querySelector('.series__visual');
-					var restBottom = (parseFloat(getComputedStyle(lastVisual).top) || 0)
-						+ lastVisual.getBoundingClientRect().height;
-					var below = document.documentElement.scrollHeight
-						- (lastSeries.getBoundingClientRect().bottom + window.scrollY);
-					var runway = window.innerHeight - restBottom;
-					document.body.style.paddingBottom =
-						Math.max(0, Math.ceil(runway - below)) + 'px';
+					// The page has to be scrollable as far as the offset where the last
+					// series' bottom meets the pinned column's bottom, or it can never
+					// release. Adjust the current padding by the shortfall rather than
+					// recomputing from zero: the target moves as the page settles, and a
+					// value derived from a stale baseline just stays wrong. Padding below
+					// the series doesn't move it, so this measures cleanly in place.
+					var current = parseFloat(document.body.style.paddingBottom) || 0;
+					var releaseAt = (lastSeries.getBoundingClientRect().bottom + window.scrollY)
+						- lastVisual.getBoundingClientRect().height
+						- (parseFloat(getComputedStyle(lastVisual).top) || 0);
+					var shortfall = Math.ceil(releaseAt + window.innerHeight
+						- document.documentElement.scrollHeight);
+					var next = Math.max(0, current + shortfall);
+					if (Math.abs(next - current) >= 1) {
+						document.body.style.paddingBottom = next + 'px';
+						pending = true; // re-measure; the change can move what was just read
+					}
 				}
 
 				// Some clip hasn't reported its size yet. Events alone aren't enough

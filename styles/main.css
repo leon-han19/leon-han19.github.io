@@ -566,6 +566,21 @@ ul li {
 /* case study styles */
 
 
+/* animate.css's fadeInUp travels 100% of each element's own height, so a
+   22px heading and a 380px checklist cover wildly different distances in the
+   same second and arrive out of step. These blocks all rise the same short
+   distance instead, which reads as one movement and costs far less to paint. */
+@keyframes seriesRise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+.series .animated.fadeInUp {
+  animation-name: seriesRise;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(.22, .61, .36, 1);
+}
+
 /* scroll-driven case study: per-series sticky visual + variant carousel */
 /************************************************************************/
 .series {
