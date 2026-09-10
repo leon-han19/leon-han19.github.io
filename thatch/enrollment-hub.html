@@ -70,77 +70,71 @@
 		<section class="series" data-series="1">
 			<div class="series__visual">
 				<div class="series__header animated fadeInUp">
-					<h2 class="series__decision">How admins slice the employee breakdown</h2>
+					<h2 class="series__decision">Key design decisions on the enrollment tracker</h2>
 				</div>
 				<div class="series__stage animated fadeInUp">
 				<figure class="stage-item is-active" data-variant="1">
-					<video class="stage-video" poster="../images/enrollment_hub/1.1-poster.jpg?v=1788942653"
-					       muted loop playsinline preload="auto" aria-label="Cohorts as tabs across the top">
-						<source src="../images/enrollment_hub/1.1.mp4?v=1788941906" type="video/mp4">
+					<video class="stage-video" poster="../images/enrollment_hub/1.2-poster.jpg?v=1788942653"
+					       muted loop playsinline preload="auto" aria-label="Vertical vs horizontal breakdowns">
+						<source src="../images/enrollment_hub/1.2.mp4?v=1788942038" type="video/mp4">
 					</video>
 				</figure>
 				<figure class="stage-item" data-variant="2">
-					<video class="stage-video" poster="../images/enrollment_hub/1.2-poster.jpg?v=1788942653"
-					       muted loop playsinline preload="auto" aria-label="Cohorts as a list beside the rate">
-						<source src="../images/enrollment_hub/1.2.mp4?v=1788942038" type="video/mp4">
+					<video class="stage-video" poster="../images/enrollment_hub/1.1-poster.jpg?v=1788942653"
+					       muted loop playsinline preload="auto" aria-label="Visual next to each employee breakdown">
+						<source src="../images/enrollment_hub/1.1.mp4?v=1788941906" type="video/mp4">
 					</video>
 				</figure>
 				</div>
 				<div class="series__caption animated fadeInUp">
-					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">Cohorts as tabs across the top</span></p>
-					<p class="caption-item" data-variant="2"><span class="caption-item__status">Cohorts as a list beside the rate</span></p>
+					<p class="caption-item is-active" data-variant="1"><span class="caption-item__status">Vertical vs horizontal breakdowns</span></p>
+					<p class="caption-item" data-variant="2"><span class="caption-item__status">Visual next to each employee breakdown</span></p>
 				</div>
 				<div class="series__carousel animated fadeInUp">
-				<button type="button" class="thumb is-active" data-variant="1" aria-label="Visual 1: Cohorts as tabs across the top"><img src="../images/enrollment_hub/1.1-poster.jpg?v=1788942653" alt=""></button>
-				<button type="button" class="thumb" data-variant="2" aria-label="Visual 2: Cohorts as a list beside the rate"><img src="../images/enrollment_hub/1.2-poster.jpg?v=1788942653" alt=""></button>
+				<button type="button" class="thumb is-active" data-variant="1" aria-label="Visual 1: Vertical vs horizontal breakdowns"><img src="../images/enrollment_hub/1.2-poster.jpg?v=1788942653" alt=""></button>
+				<button type="button" class="thumb" data-variant="2" aria-label="Visual 2: Visual next to each employee breakdown"><img src="../images/enrollment_hub/1.1-poster.jpg?v=1788942653" alt=""></button>
 				</div>
 			</div>
 
 			<div class="series__content">
 				<article class="variant" data-variant="1">
-					<h3 class="variant__name animated fadeInUp">1. Cohorts as tabs across the top</h3>
+					<h3 class="variant__name animated fadeInUp">1. Vertical vs horizontal breakdowns</h3>
 					<ul class="checklist animated fadeInUp">
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
-							<span>One tab per cohort, each carrying its own progress indicator so an admin can compare at a glance.</span>
+							<span><b>Horizontal</b>: chosen for visual hierarchy of seeing the large % number first and how the horizontal nature future-proofs for different string lengths of a breakdown's name – if one label was long in a vertical list, then the entire list would get wider.</span>
 						</li>
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
-							<span>The overall rate stays put while the tabs filter it, so the number never moves out from under you.</span>
-						</li>
-						<li>
-							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-								<polyline points="20 6 9 17 4 12"></polyline>
-							</svg>
-							<span>TODO(leon): why the tabs won out (or didn’t).</span>
+							<span><b>Vertical</b>: skipped because of how the left-hand list pushes the large % number to the right, which makes the page look imbalanced – the focal point of the page should be at the top left.</span>
 						</li>
 					</ul>
 				</article>
 
 				<article class="variant" data-variant="2">
-					<h3 class="variant__name animated fadeInUp">2. Cohorts as a list beside the rate</h3>
+					<h3 class="variant__name animated fadeInUp">2. Visual next to each employee breakdown</h3>
 					<ul class="checklist animated fadeInUp">
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
-							<span>A vertical list of cohorts, each labelled with how many of its employees still need to take action.</span>
+							<span><b>Donut</b>: chosen for its small size and ability to match the green colour of the "enrolled" section below.</span>
 						</li>
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
-							<span>Puts the rate and the cohort you’re filtering to side by side, rather than above and below.</span>
+							<span><b>Percentage</b>: skipped because it could easily be interpreted as, for example, "19% of employees are renewing" instead of "19% of employees who are renewing have enrolled".</span>
 						</li>
 						<li>
 							<svg class="checklist__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
 								<polyline points="20 6 9 17 4 12"></polyline>
 							</svg>
-							<span>TODO(leon): what this cost in width, and how many cohorts it stopped scaling at.</span>
+							<span><b>Meter</b>: skipped due to its similarity to the larger bar visual below and large width that made it less effective as an "at a glance" visual.</span>
 						</li>
 					</ul>
 				</article>
