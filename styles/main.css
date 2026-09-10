@@ -48,6 +48,10 @@ body {
   margin-right: 0px;
 }
 
+.container__items--home {
+  padding-bottom: 40px; /* no page nav here to space the last card off the edge */
+}
+
 @media (max-width: 770px) {
   .container__items {
     margin-left: 20px;
